@@ -1,13 +1,18 @@
+"use client";
+import { useContext } from "react";
 import Image from 'next/image'
 import styles from './page.module.css'
+import { LocaleContext } from '@/context/LocaleContext';
 
 export default function Home() {
+  const { translate } = useContext(LocaleContext);
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          <code className={styles.code}>{translate('components.menu.home')}</code>
         </p>
         <div>
           <a
