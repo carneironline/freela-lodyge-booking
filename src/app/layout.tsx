@@ -1,4 +1,3 @@
-import './globals.css'
 import '@/styles/globals.scss'
 import { Inter } from 'next/font/google'
 import { LocaleProvider } from '@/context/LocaleContext';
