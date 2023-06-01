@@ -1,0 +1,25 @@
+@import '@/styles/mixins.scss';
+
+.menu {
+    position: absolute;
+    top: var(--space-4x);
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @include appMargin;
+
+    height: 70px;
+    border-radius: 10px;
+    background-color: var(--color-gray);
+    padding: var(--space-2-5x);
+
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 25px;
+    z-index: 6;
+}

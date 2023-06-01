@@ -9,3 +9,7 @@
   html {
     background-color: var(--background-color);
   }
+
+  .body.overflowHidden, html.overflowHidden {
+    overflow: hidden !important;
+  }

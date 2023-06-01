@@ -1,4 +1,43 @@
 :root {
     --background-color: #E9E0D1;
-    --banner-top: url('../assets/images/banner-top.png')
+
+    --color-gray:#313131;
+
+    --color-white: #FFFFFF;
+    --color-white-10: #F1F1F1;
+
+    --color-blue-50:#048ABF;
+    --color-blue-10:#B3D9E8;
+
+    --color-green-10:#C8DEBC;
+    --color-green-50: #557047;
+
+    --color-beige-10:#E9E0D1;
+    --color-beige-20: #D3C3A7;
+    --linear-beige-gradient: linear-gradient(
+        319.28deg, 
+        #DFD3C0 20.06%, 
+        rgba(223, 211, 192, 0.15) 100%
+    );
+    
+    --space-0-5x: 4px;
+    --space-1x: 8px;
+    --space-1-5x: 12px;
+    --space-2x: 16px;
+    --space-2-5x: 20px;
+    --space-3x: 24px;
+    --space-4x: 32px;
+    --space-5x: 40px;
+    --space-6x: 48px;
+    --space-7x: 56px;
+    --space-8x: 64px;
+    --space-9x: 72px;
+    --space-10x: 80px;
+    --space-11x: 88px;
+    --space-12x: 96px;
+
+    --banner-top: url('../assets/images/banner-top.png');
+    
+    --theme-transition-duration-base: 250ms;
+    --overlay-menu-hamburguer: rgba(0,0,0,.6);
 }

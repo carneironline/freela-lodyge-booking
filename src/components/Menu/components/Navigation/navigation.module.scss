@@ -1,0 +1,52 @@
+.login {
+    background-color: var(--color-blue-50);
+    padding: 9px 35px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-white);
+}
+
+.division {
+    margin: 0 var(--space-6x);
+    border-top: 1px solid var(--color-white);
+    opacity: .25;
+}
+
+.overviewContainer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: var(--space-6x) var(--space-6x) var(--space-4x) var(--space-6x);
+}
+
+.tokenButton {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 28px;
+    border-radius: 50px;
+    background-color: transparent;
+
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.tokenTypeText {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.localesContainer {
+    display: flex;
+    gap: var(--space-2-5x);
+
+    position: absolute;
+    z-index: 6;
+    bottom: var(--space-6x);
+    padding-left: var(--space-6x);
+}
+
+.mobiNavContainer {
+    height: calc(100vh - (var(--space-4x) + var(--space-12x)));
+}
