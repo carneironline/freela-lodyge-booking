@@ -1,0 +1,14 @@
+
+.searchBar {
+    width: 100%;
+    height: 200px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: var(--space-2-5x) var(--space-3x);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  
+}
