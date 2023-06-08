@@ -21,7 +21,7 @@ type LocaleContextType = {
     locale: string;
     setLocale: (locale: string) => void;
     toggleLocation: (checked: boolean) => void;
-    isEn: boolean;
+    isPT: boolean;
     translate: (scope: string, options?: {}) => string;
 };
 
@@ -36,17 +36,17 @@ let _locales: any;
 let _locale: any;
 
 export const LocaleContext = createContext<LocaleContextType>({
-    locale: 'en',
+    locale: 'pt-BR',
     setLocale: () => {},
     toggleLocation: () => {},
-    isEn: true,
+    isPT: true,
     translate: (_scope: string, _options?: {}) => "",
 });
 
 export const LocaleProvider = ({children}: WithChildrenProps) => {
     const [isReady, setIsReady] = useState(false);
-    const [locale, setLocale] = useState('en');
-    const [isEn, setIsEn] = useState<boolean>(true);
+    const [locale, setLocale] = useState('pt-BR');
+    const [isPT, setIsPT] = useState<boolean>(true);
     const storageLocale = typeof localStorage !== 'undefined' ? localStorage.getItem(LOCALE_TOKEN) : null;
     const browserLocale = typeof navigator !== 'undefined' ? navigator.language : 'en';
     const locales = Object.values(LANGUAGES);
@@ -57,15 +57,15 @@ export const LocaleProvider = ({children}: WithChildrenProps) => {
     }
 
     const getSystemLocale = (locale: string): string => {
-        const DEFAULT_LOCALE = 'en';
+        const DEFAULT_LOCALE = 'pt-BR';
         return LANGUAGES[locale] || DEFAULT_LOCALE;
     };
 
     const detectStorageLocale = useCallback(() => {
         const localeStorage = typeof localStorage !== 'undefined' ? localStorage.getItem(LOCALE_TOKEN) : null;
-        const isEn = localeStorage === 'en';
+        const isPT = localeStorage === 'pt-BR';
     
-        setIsEn(isEn);
+        setIsPT(isPT);
     },[]);
 
     const setStorageLocale = useCallback(() => {
@@ -81,9 +81,9 @@ export const LocaleProvider = ({children}: WithChildrenProps) => {
     },[browserLocale, storageLocale]);
 
     const toggleLocation = (checked: boolean) => {
-        const newLocation = checked ? 'en' : 'pt-BR';
+        const newLocation = checked ? 'pt-BR' : 'en';
         localStorage.setItem(LOCALE_TOKEN, newLocation);
-        setIsEn(checked);
+        setIsPT(checked);
         setLocale(newLocation);
         setTopLevelLocale(locales, newLocation);
     };
@@ -101,7 +101,7 @@ export const LocaleProvider = ({children}: WithChildrenProps) => {
     if(!isReady) return <></>;
 
     return (
-        <LocaleContext.Provider value={{ locale, setLocale, toggleLocation, isEn, translate }}>
+        <LocaleContext.Provider value={{ locale, setLocale, toggleLocation, isPT, translate }}>
             {children}
         </LocaleContext.Provider>
     )

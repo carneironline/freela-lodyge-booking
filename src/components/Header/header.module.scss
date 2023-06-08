@@ -1,0 +1,74 @@
+@import '@/styles/breakpoints';
+@import '@/styles/mixins';
+
+.headerBg {
+    position: relative;
+    width: 100%;
+    background: var(--banner-top);
+    background-repeat: no-repeat;
+    background-size: 230% auto;
+    box-sizing: content-box;
+    padding-top: calc(2 * var(--space-12x));
+    padding-bottom: var(--space-9x);
+
+    @media #{$BREAKPOINT-DESK} {
+        background-size: 100% auto;
+        padding-bottom: var(--space-12x);
+        background-position: 0 -200px;
+    }
+}
+
+.fadeoutMask {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    background: transparent linear-gradient(180deg, #E9E0D1 0%, #e9e0d400 100%) 0% 0% no-repeat padding-box;
+    filter: brightness(0.5);
+}
+
+.headerContainer {
+    @include appMargin;
+
+    position: relative;
+    z-index: 1;
+    @media #{$BREAKPOINT-DESK} {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.headerTitleMobi, .headerTitleDesk {
+    color: var(--color-white);
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    margin-bottom: var(--space-5x);
+
+    @media #{$BREAKPOINT-DESK} {
+        margin-bottom: var(--space-8x);
+    }   
+}
+
+.headerTitleMobi {
+    font-size: 32px;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: none;
+    }
+}
+
+.headerTitleDesk {
+    font-size: 48px;
+    display: none;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: block;
+    }
+}

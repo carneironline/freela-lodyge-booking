@@ -1,0 +1,67 @@
+.container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .container .input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container .button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding: 9px 18px;
+    background-color: #F1F1F1;
+    height: 100%;
+    border-radius: 50px;
+
+    --button-bg-color: #C8DEBCB2;
+    --inner-circle-color: #557047;
+  }
+
+  .secondary .button {
+    --button-bg-color: #B3D9E8;
+    --inner-circle-color: #048ABF;
+}
+  
+  .container .input:checked + .button {
+    background-color: var(--button-bg-color); 
+  }
+  
+  .container .button .innerCircle {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: 18px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #B5B5B5;
+  }
+  
+  .container .input:checked + .button .innerCircle {
+    background: var(--inner-circle-color); 
+  }
+  
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: var(--space-1x);
+  }
+
+  .labelContainer {
+    display: flex;
+    align-items: center;
+  }

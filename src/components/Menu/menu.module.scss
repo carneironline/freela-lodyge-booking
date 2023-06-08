@@ -1,0 +1,56 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/breakpoints.scss';
+
+.menu {
+    position: absolute;
+    top: var(--space-4x);
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @include appMargin;
+
+    height: 70px;
+    border-radius: 10px;
+    background-color: var(--color-gray);
+    padding: var(--space-2-5x);
+
+    display: flex;
+    align-items: center;
+
+    @media #{$BREAKPOINT-DESK} {
+        padding: var(--space-4x) var(--space-6x);
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    width: 100px;
+    height: 25px;
+    z-index: 6;
+
+    @media #{$BREAKPOINT-DESK} {
+        margin-right: var(--space-8x);
+    }
+}
+
+.deskNavi {
+    display: flex;
+    gap: var(--space-4x);
+
+    a { 
+        margin: 0; 
+    }
+
+    a:hover {
+        opacity: 0.5;
+    }
+}
+
+.deskNavContainer, .deskLocationContainer {
+    display: none;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: block;
+    }
+}

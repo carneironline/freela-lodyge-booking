@@ -1,0 +1,16 @@
+
+.buttonContainer {
+    background-color: var(--color-blue-50);
+    padding: 12px 29px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+
+.buttonContainer:hover {
+    background-color: var(--color-blue-60);
+}

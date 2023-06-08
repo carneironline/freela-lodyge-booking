@@ -1,0 +1,86 @@
+@import '@/styles/mixins';
+
+.localesContainer {
+    width: 120px;
+    display: flex;
+    gap: var(--space-1-5x);
+}
+
+.localeMobiButton {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.localePipe {
+    opacity: .25;
+    margin-left: 15px;
+}
+
+.localeActive {
+    font-weight: 700;
+}
+
+.toggleLocation {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.locationToggleLabel {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100px;
+    height: 30px;
+    background-color: var(--color-input-background);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 20px #477a8550;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.locationToggleLabel::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #e8f5f7;
+    position: absolute;
+    border-radius: 70px;
+    top: 4px;
+    left: 4px;
+    transition: 0.5s;
+  }
+
+.toggleLocation:checked + .locationToggleLabel:after {
+    left: calc(100% - 4px);
+    transform: translateX(-100%);
+}
+
+.locationToggleLabel:active:after {
+    width: 40px;
+}
+
+.enShortCut, .ptShortCut {
+    font-family: var(--theme-font-secondary);
+    color: #F2F2F2;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enShortCut {
+    margin-left: 8px;
+}
+
+.ptShortCut {
+    margin-right: 8px;
+}

@@ -1,0 +1,16 @@
+@import '@/styles/breakpoints';
+
+.navLink {
+    margin-bottom: var(--space-4x);
+    text-decoration: unset;
+    color: var(--color-white);
+    text-transform: uppercase;
+    
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        margin-right: var(--space-6x);
+        margin-bottom: unset;
+    }
+
+    display: flex;
+    align-items: center;
+}

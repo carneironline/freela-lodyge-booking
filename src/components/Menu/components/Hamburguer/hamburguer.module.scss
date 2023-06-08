@@ -1,0 +1,88 @@
+@import '@/styles/breakpoints.scss';
+@import '@/styles/menuButtons.scss';
+
+.hamburguerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: none;
+    }
+}
+
+.hamburguerMenuButtonWrapper {
+    display: block;
+    z-index: 6;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: none;
+    }
+}
+
+.hamburguerMenuButton {
+    outline: 0px;
+    border: none;
+    text-indent: -9999em;
+    overflow: hidden;
+    color: transparent;
+    font-size: 0;
+    left: 9px;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    background-image: url($HAMBURGUER_BUTTON);
+    background-repeat: no-repeat;
+    background-size: 32px auto;
+    background-position: var(--position-menu-hamburguer-bg);
+    transform: rotate(0deg) translate(0%, 0%);
+    transition: transform 0.5s;
+}
+
+.menuOpen {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hamburguerMenuButtonOpen {
+    transform: rotate(360deg) translate(0%, 0%);
+    background-image: url($CLOSE_BUTTON);
+    background-size: 32px auto;
+}
+
+.menuSlideBar {
+    background: var(--color-gray);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    -webkit-transition: all var(--theme-transition-duration-base) ease-in-out;
+    transition: all var(--theme-transition-duration-base) ease-in-out;
+    width: 100%;
+    height: 100%;
+    padding-top: var(--space-12x);
+
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 100%;
+}
+
+.menuSlideBarOpen {
+    -webkit-transform: translateY(calc(-1 * (100vh - var(--space-4x))));
+    transform: translateY(calc(-1 * (100% - var(--space-4x))));
+}
+
+.slideBarNavWrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: none;
+    }
+}
+
+.mobiNav {
+    padding: var(--space-6x) var(--space-6x) var(--space-4x) var(--space-6x);
+}

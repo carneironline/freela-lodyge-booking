@@ -1,0 +1,10 @@
+@import './breakpoints.scss';
+
+@mixin appMargin {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        max-width: 1110px;
+    }
+}

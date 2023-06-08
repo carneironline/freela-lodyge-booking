@@ -1,5 +1,16 @@
+@import './vars';
+@import '../assets/fonts/fonts';
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+  }
+
+  html {
+    background-color: var(--background-color);
+  }
+
+  .body.overflowHidden, html.overflowHidden {
+    overflow: hidden !important;
   }
