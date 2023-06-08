@@ -43,15 +43,32 @@
     }
 }
 
-.headerTitle {
-    font-weight: 700;
-    font-size: 32px;
-    text-align: center;
+.headerTitleMobi, .headerTitleDesk {
     color: var(--color-white);
+    text-align: center;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-secondary);
+    font-weight: 700;
     margin-bottom: var(--space-5x);
 
     @media #{$BREAKPOINT-DESK} {
         margin-bottom: var(--space-8x);
     }   
+}
+
+.headerTitleMobi {
+    font-size: 32px;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: none;
+    }
+}
+
+.headerTitleDesk {
+    font-size: 48px;
+    display: none;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: block;
+    }
 }

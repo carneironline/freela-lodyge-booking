@@ -5,6 +5,10 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: none;
+    }
 }
 
 .hamburguerMenuButtonWrapper {
@@ -73,6 +77,10 @@
 .slideBarNavWrapper {
     display: flex;
     flex-direction: column;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: none;
+    }
 }
 
 .mobiNav {

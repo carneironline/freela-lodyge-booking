@@ -1,8 +1,10 @@
+"use client";
 import React, { useContext } from 'react';
 import { LocaleContext } from '@/context/LocaleContext';
 import { MenuControlContext } from '@/context/MenuControlContext';
 import { Link } from './components/Link';
-import { ToggleLocation } from '@/components/ToggleLocation';
+import Button from '@/components/Button';
+import { ToggleLocation } from '@/components/Menu/components/ToggleLocationMobi';
 import Image from 'next/image';
 import Global from '../../../../assets/icons/global.png';
 
@@ -19,14 +21,14 @@ export const NavLinks = ({ containerClass, className, isClickable }: NavigationT
     const { clickHandler } = useContext(MenuControlContext);
 
     return (
-        <section className={styles.mobiNavContainer} style={{position: 'relative'}}>
+        <section className={styles.navContainer} style={{position: 'relative'}}>
             <nav className={className}>
                 <Link url="/#aboutMe" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.home')}</Link>
                 <Link url="/#clients" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.about')}</Link>
                 <Link url="/#portfolio" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.register')}</Link>
-                <button className={styles.login}>
+                <Button type="primary">
                     {translate('components.menu.login')}
-                </button>
+                </Button>
             </nav>
             <hr className={styles.division} />
             <section className={styles.overviewContainer}>
@@ -40,7 +42,7 @@ export const NavLinks = ({ containerClass, className, isClickable }: NavigationT
             <section className={styles.localesContainer}>
                 <Image src={Global} alt="Internationalization" /><ToggleLocation />
             </section>
-        </section>
+        </section> 
     )
 }
  

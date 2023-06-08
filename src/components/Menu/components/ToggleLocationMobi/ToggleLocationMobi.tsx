@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { LocaleContext } from '../../context/LocaleContext';
+import { LocaleContext } from '@/context/LocaleContext';
 import clsx from "classnames";
 
-import styles from './toggleLocation.module.scss';
+import styles from './ToggleLocationMobi.module.scss';
 
 export const ToggleLocationSwitch: React.FC = () => {
   const { toggleLocation, setLocale, isPT} = useContext(LocaleContext);

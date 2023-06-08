@@ -1,4 +1,5 @@
 @import '@/styles/mixins.scss';
+@import '@/styles/breakpoints.scss';
 
 .menu {
     position: absolute;
@@ -16,10 +17,40 @@
 
     display: flex;
     align-items: center;
+
+    @media #{$BREAKPOINT-DESK} {
+        padding: var(--space-4x) var(--space-6x);
+        justify-content: space-between;
+    }
 }
 
 .logo {
     width: 100px;
     height: 25px;
     z-index: 6;
+
+    @media #{$BREAKPOINT-DESK} {
+        margin-right: var(--space-8x);
+    }
+}
+
+.deskNavi {
+    display: flex;
+    gap: var(--space-4x);
+
+    a { 
+        margin: 0; 
+    }
+
+    a:hover {
+        opacity: 0.5;
+    }
+}
+
+.deskNavContainer, .deskLocationContainer {
+    display: none;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: block;
+    }
 }
