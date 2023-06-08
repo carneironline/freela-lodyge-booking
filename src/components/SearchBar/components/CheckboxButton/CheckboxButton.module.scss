@@ -6,8 +6,6 @@
     border-radius: 50px;
     cursor: pointer;
     user-select: none;
-
-    margin-bottom: var(--space-1-5x);
   }
   
   .container .input {
@@ -27,10 +25,18 @@
     background-color: #F1F1F1;
     height: 100%;
     border-radius: 50px;
+
+    --button-bg-color: #C8DEBCB2;
+    --inner-circle-color: #557047;
   }
+
+  .secondary .button {
+    --button-bg-color: #B3D9E8;
+    --inner-circle-color: #048ABF;
+}
   
   .container .input:checked + .button {
-    background-color: #C8DEBCB2;
+    background-color: var(--button-bg-color); 
   }
   
   .container .button .innerCircle {
@@ -46,7 +52,7 @@
   }
   
   .container .input:checked + .button .innerCircle {
-    background: #557047;
+    background: var(--inner-circle-color); 
   }
   
   .label {

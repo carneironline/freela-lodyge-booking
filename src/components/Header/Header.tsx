@@ -1,6 +1,7 @@
 import styles from './header.module.scss'
-import Menu from '../Menu';
-import SearchBar from '../SearchBar';
+import Menu from '../Menu'
+import SearchBar from '../SearchBar'
+import Availability from './components/Availability'
 
 const Header = () => {
     return (
@@ -10,6 +11,7 @@ const Header = () => {
             <section className={styles.headerContainer}>
                 <h1 className={styles.headerTitle}>Lugares únicos,<br /> como você</h1>
                 <SearchBar />
+                <Availability />
             </section>
         </section>
     )
