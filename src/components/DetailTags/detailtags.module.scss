@@ -1,0 +1,94 @@
+@import '@/styles/breakpoints';
+
+.modalTagsBackdrop {
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  background-color: var(--backdrop-color);
+
+  .modalTags {
+    width: 90%;
+    height: 60%;
+    background-color: var(--color-white);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: none;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    @media #{$BREAKPOINT-DESK} {
+      width: 50%;
+    }
+
+    .close {
+      display: flex;
+      align-self: flex-end;
+      img {
+        margin-left: auto;
+        margin-right: 35px;
+        margin-top: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .modalColumns {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      overflow-y: auto;
+      padding-bottom: 40px;
+      overflow-x: hidden; 
+      margin: var(--space-2x);
+      scrollbar-color: var(--scrollbar-color) var(--scrollbar-track-color);
+      scrollbar-width: auto;
+
+
+      @media #{$BREAKPOINT-DESK} {
+        width: 90%;
+        padding: 0px var(--space-12x);
+      }
+
+      .column {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        
+        margin: 0px var(--space-2x);
+        border-bottom: 1px solid var(--line-separator);
+        margin-bottom: 10px;
+        padding: 10px;
+        @media #{$BREAKPOINT-DESK} {
+          margin: 0px;
+          flex: 1 1 50%;
+        }
+
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .modalColumns::-webkit-scrollbar {
+      width: 11px;
+    }
+    
+    .modalColumns::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track-color);
+      border-radius: 100px;
+    }
+    
+    .modalColumns::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-color);
+      border-radius: 100px;
+    }
+  }
+}
+
