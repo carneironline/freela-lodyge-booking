@@ -1,7 +1,10 @@
 import '@/styles/globals.scss'
 import { Inter } from 'next/font/google'
-import { LocaleProvider } from '@/context/LocaleContext';
-import { MenuControlProvider } from '@/context/MenuControlContext';
+import { 
+  LocaleProvider, 
+  MenuControlProvider, 
+  TagsControlProvider 
+} from '@/context';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +23,9 @@ export default function RootLayout({
         <body className={inter.className}>
           <MenuControlProvider>
             <LocaleProvider>
-              {children}
+              <TagsControlProvider>
+                {children}
+              </TagsControlProvider>
             </LocaleProvider>
           </MenuControlProvider>
         </body>

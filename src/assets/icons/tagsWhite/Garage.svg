@@ -1,0 +1,14 @@
+<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Garage" clip-path="url(#clip0_230_7019)">
+<path id="Vector" d="M1.06641 12.1321H13.8513" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M12.9385 12.1321V6.34861C12.9386 6.27332 12.9202 6.19916 12.8847 6.13274C12.8493 6.06632 12.7979 6.0097 12.7353 5.96791L7.71265 2.61929C7.63762 2.56923 7.54944 2.54251 7.45924 2.54251C7.36904 2.54251 7.28086 2.56923 7.20582 2.61929L2.18317 5.96791C2.12054 6.0097 2.06922 6.06632 2.03377 6.13274C1.99831 6.19916 1.97984 6.27332 1.97998 6.34861V12.1321" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M4.2627 12.1321V8.47925H10.6552V12.1321" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M7.45898 8.47925V12.1321" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M4.2627 10.3057H10.6552" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_230_7019">
+<rect width="14.6114" height="14.6114" fill="white" transform="translate(0.15332 0.716965)"/>
+</clipPath>
+</defs>
+</svg>
