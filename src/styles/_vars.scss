@@ -43,10 +43,23 @@
     --space-11x: 88px;
     --space-12x: 96px;
 
+    --main-card-img-mobi-width: 190px;
+    --main-card-img-mobi-height: 223px;
+
+    --main-card-img-desk-width: 315px;
+    --main-card-img-desk-height: 366px;
+
+    --secondary-card-img-mobi-width: 102px;
+    --secondary-card-img-mobi-height: 110px;
+
+    --secondary-card-img-desk-width: 168px;
+    --secondary-card-img-desk-height: 180.5px;
+
     --banner-top: url('../assets/images/banner-top.png');
     
     --theme-transition-duration-base: 250ms;
     --overlay-menu-hamburguer: rgba(0,0,0,.6);
 
     --font-secondary: "Gilroy",-apple-system-font,Arial,Helvetica,sans-serif;
+    --card-background: linear-gradient(319.28deg, #DFD3C0 20.06%, rgba(223, 211, 192, 0.15) 100%);
 }

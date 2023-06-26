@@ -1,0 +1,150 @@
+@import '@/styles/breakpoints';
+
+.cardContainer {
+    background: var(--card-background);
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: var(--space-2-5x);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media #{$BREAKPOINT-DESK} {
+        padding: var(--space-4x);
+    }
+}
+
+.mainPicture, .secondPicture, .thirdPicture {
+    object-fit: cover;
+}
+
+.mainPicture {
+    width: var(--main-card-img-mobi-width);
+    height: var(--main-card-img-mobi-height);
+    border-radius: 10px 0px 0px 10px;
+
+    @media #{$BREAKPOINT-DESK} {
+        width: var(--main-card-img-desk-width);
+        height: var(--main-card-img-desk-height);
+    }
+}
+
+.secondPicture, .thirdPicture {
+    width: var(--secondary-card-img-mobi-width);
+    height: var(--secondary-card-img-mobi-height);
+
+    @media #{$BREAKPOINT-DESK} {
+        width: var(--secondary-card-img-desk-width);
+        height: var(--secondary-card-img-desk-height);
+    }
+}
+
+.secondPicture {
+    border-radius: 0px 10px 0px 0px;
+}
+
+.thirdPicture {
+    border-radius: 0px 0px 10px 0px;
+}
+
+.imgContainer {
+    position: relative;
+    display: flex;
+    gap: 2px;
+    margin-bottom: var(--space-2-5x);
+
+    @media #{$BREAKPOINT-DESK} {
+        gap: 5px;
+    }
+}
+
+.imagContainerCol2 {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    @media #{$BREAKPOINT-DESK} {
+        gap: 5px;
+    }
+}
+
+.secondaryImgsContainer {
+    width: var(--secondary-card-img-mobi-width);
+    height: var(--secondary-card-img-mobi-height);
+
+    @media #{$BREAKPOINT-DESK} {
+        width: var(--secondary-card-img-desk-width);
+        height: var(--secondary-card-img-desk-height);
+    }
+}
+
+.title {
+    font-family: var(--font-secondary);
+    color: #313131;
+    text-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+    font-size: 24px;
+    font-weight: 700;
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: 36px;
+    }
+}
+
+.subtitle {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: 16px;
+    }
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1x);
+    margin-top: var(--space-4x);
+}
+
+.icon, .moreTags {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$BREAKPOINT-DESK} {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.icon {
+    background-color: var(--color-beige-20);
+}
+
+.moreTags {
+    background: var(--color-blue-50);
+    font-size: 8px;
+    color: var(--color-white);
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: 14px;
+    }
+}
+
+.externalLinkButton {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.externalLinkIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: none;
+}

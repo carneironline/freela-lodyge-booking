@@ -11,6 +11,7 @@
     background-color: var(--background-color);
   }
 
-  .body.overflowHidden, html.overflowHidden {
+  body.overflowHidden, html.overflowHidden {
     overflow: hidden !important;
+    overflow-y: scroll; 
   }

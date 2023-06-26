@@ -1,14 +1,19 @@
+"use client";
+
+import { useContext } from 'react'
 import Image from 'next/image';
-import React from 'react';
-import styles from './detailtags.module.scss'
+import { TagsControlContext } from '@/context';
 
 import DogSVG from '@/assets/images/tag-modal/Dog.svg'
 import WifiSVG from '@/assets/images/tag-modal/WifiHigh.svg'
 import Campfire from '@/assets/images/tag-modal/Campfire.svg'
 import CloseSVG from '@/assets/images/tag-modal/Close.svg'
 
+import styles from './detailtags.module.scss'
+
 
 function DetailTags() {
+  const { isModalOpen, clickHandler } = useContext(TagsControlContext);
 
   const icons = {
     1: DogSVG,
@@ -153,17 +158,20 @@ function DetailTags() {
       icon: 1,
     },
   ]
+
+  if(!isModalOpen) return null;
+
   return (
     <aside className={styles.modalTagsBackdrop}>
       <div className={styles.modalTags}>
-        <div className={styles.close}>
-          <Image src={CloseSVG} />
-        </div>
+        <button className={styles.close} onClick={clickHandler}>
+          <Image src={CloseSVG} alt={''} />
+        </button>
         <div className={styles.modalColumns}>
           {
             tags.filter(tag => tag.active).map(tag => (
               <div className={styles.column}>
-                <Image src={icons[tag.icon]} />
+                <Image src={icons[tag.icon]} alt={''} />
                 <span>{tag.name}</span>
               </div>
             ))
@@ -175,4 +183,5 @@ function DetailTags() {
   );
 }
 
+export default DetailTags;
 export default DetailTags;
