@@ -3,6 +3,7 @@ import DetailTags from '@/components/DetailTags'
 import Header from '@/components/Header'
 import OfferCard from '@/components/OfferCard'
 import Footer from '@/components/Footer'
+import ExperiencesList from '@/components/ExperiencesList'
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
         <OfferCard />
         <OfferCard />
       </section>
+      <ExperiencesList />
       <Footer />
     </section>
   )
