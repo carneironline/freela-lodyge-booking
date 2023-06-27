@@ -9,3 +9,27 @@
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Light.eot');
+    src: url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Light.ttf') format('ttf'),
+        url('Gilroy-Light.woff2') format('woff2'),
+        url('Gilroy-Light.woff') format('woff'),
+        url('Gilroy-Light.svg#Gilroy-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Regular.eot');
+    src: url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Regular.ttf') format('ttf'),
+        url('Gilroy-Regular.woff2') format('woff2'),
+        url('Gilroy-Regular.woff') format('woff'),
+        url('Gilroy-Regular.svg#Gilroy-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
