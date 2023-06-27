@@ -18,7 +18,8 @@
     width: 100%;
     height: 476px;
     margin-bottom: var(--space-4x);
-
+    position: relative;
+    
     @media #{$BREAKPOINT-DESK} {
         width: 50%;
         height: 843px;
