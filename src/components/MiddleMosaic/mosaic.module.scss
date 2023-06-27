@@ -1,0 +1,82 @@
+@import '@/styles/breakpoints';
+
+.middleSection {
+  .opacity40 {
+    opacity: 0.4;
+  }
+  .opacity70 {
+    opacity: 0.7;
+  }
+  .text {
+    margin: 0px var(--space-2-5x);
+    text-align: center;
+    h2 {
+      margin: auto;
+      margin-top: var(--space-8x);
+      margin-bottom: var(--space-2-5x);
+      color: var(--color-gray);
+      font-weight: 700;
+      line-height: 125%;
+      max-width: 634px;
+      font-family: var(--font-secondary);
+      font-size: 24px;
+
+      @media #{$BREAKPOINT-DESK} {
+        font-size: 36px;
+      }
+    }
+    p {
+      color: var(--text-color);
+      font-size: 14px;
+      font-family: var(--font-text);
+      line-height: 150%;
+      max-width: 730px;
+      margin: auto;
+      margin-bottom: var(--space-8x);
+    }
+  }
+  .mosaicFirst {
+    margin-top: var(--space-2-5x);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2-5x);
+    margin-left: -12px;
+    justify-content: center;
+    margin: auto;
+
+    div {
+      img {
+        width: 160px;
+        height: 101px;
+        border-radius: var(--space-1-5x);
+        @media #{$BREAKPOINT-DESK} {
+          width: 236px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  .mosaicSecond {
+    margin-top: var(--space-2-5x);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2-5x);
+    margin-left: -120px;
+    justify-content: center;
+
+    div {
+      img {
+        width: 160px;
+        height: 101px;
+        border-radius: var(--space-1-5x);
+        @media #{$BREAKPOINT-DESK} {
+          width: 236px;
+          height: 150px;
+        }
+      }
+    }
+  }
+}

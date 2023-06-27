@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import OfferCard from '@/components/OfferCard'
 import Footer from '@/components/Footer'
 import ExperiencesList from '@/components/ExperiencesList'
+import MiddleMosaic from '@/components/MiddleMosaic/MiddleMosaic'
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
         <OfferCard />
         <OfferCard />
       </section>
+      <MiddleMosaic />
       <ExperiencesList />
       <Footer />
     </section>
