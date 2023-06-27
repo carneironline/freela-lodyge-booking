@@ -1,0 +1,99 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/breakpoints.scss';
+
+.footer {
+    @include appMargin;
+    background-color: var(--color-blue-50);
+    border-radius: 12px;
+    padding: var(--space-4x) var(--space-4x) var(--space-5x) var(--space-4x);
+
+    @media #{$BREAKPOINT-DESK} {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    display: flex;
+    gap: var(--space-1-5x);
+}
+
+.slogan {
+    color: var(--color-white);
+    font-size: 18px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+}
+
+.infoSummaryContainer {
+    margin: var(--space-4x) 0 var(--space-3x) 0;
+}
+
+.infoSummaryText {
+    color: var(--color-white);
+    opacity: .5;
+    font-size: 14px;
+}
+
+.navListHeader {
+    font-size: 14px;
+    color: var(--color-white);
+    opacity: .5;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: var(--space-1-5x);
+}
+
+.navLinksContainer {
+    margin-bottom: var(--space-4x);
+}
+
+.tokensList, .footerLinksList, .footerSocialList {
+    list-style-type: none;
+
+    li:not(:last-child) { 
+        margin-bottom: var(--space-1-5x);  
+     }
+}
+
+.footerSocialList {
+    display: flex;
+    gap: var(--space-1-5x);
+    margin-bottom: 0;
+}
+
+.tokensLink, .footerNavLink {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.tokensLink {
+    text-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    font-size: 12px;
+    font-weight: 700;
+
+    span {
+        color: var(--color-white);
+        opacity: .5;
+        font-weight: 300;
+    }
+}
+
+.footerNavLink {
+    font-size: 14px;
+}
+
+.footerLinksList {
+    li::before {
+        content: "·"; 
+        color: var(--color-white);
+        margin-right: var(--space-0-5x);
+    }
+}
+
+.navigation {
+    @media #{$BREAKPOINT-DESK} {
+        display: flex;
+        gap: var(--space-7x);
+    }
+}

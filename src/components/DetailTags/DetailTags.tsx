@@ -184,4 +184,3 @@ function DetailTags() {
 }
 
 export default DetailTags;
-export default DetailTags;
