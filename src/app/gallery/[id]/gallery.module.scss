@@ -1,0 +1,186 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/breakpoints';
+
+.galleryWrapper {
+    margin-top: 100px;
+    padding-top: var(--space-8x);
+
+    .arrowHeader {
+        @include appMargin;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        .arrow {
+            flex: 0 1 50%;
+            img {
+                width: var(--space-4x);
+                height: var(--space-4x);
+            }
+        }
+        
+        .title {
+            flex: 0 0 50%;            
+            h1 {
+                font-family: var(--font-secondary);
+                font-weight: 700;
+                font-size: 24px;
+                color: var(--color-gray);
+                text-align: right;
+                
+            }
+            @media #{$BREAKPOINT-DESK} {
+                display: none;
+            }
+        }
+    }
+
+    .tagsSection {
+        margin-top: var(--space-2-5x);
+        margin-bottom: var(--space-4x);
+
+
+        
+        .title {
+            display: none;
+        }
+
+        .tags {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-1x);
+            overflow-x: scroll;
+            padding: 0px var(--space-2-5x);
+    
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+    
+            &::-webkit-scrollbar {
+                display: none;
+            }
+    
+            .tag {
+                flex: 1 1 auto;
+                border-radius: 200px;
+                background-color: var(--gallery-tags-background);
+                height: 40px;
+    
+                padding: var(--space-1-5x)  var(--space-2x);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: var(--space-1-5x);
+    
+                img {
+                    flex: 0 0 auto;
+                    box-sizing: border-box;
+                    width: var(--space-4x);
+                    height: var(--space-4x);
+                }
+                span {
+                    flex: 0 0 auto;
+                    font-family: var(--font-text);
+                    font-size: var(--space-2x);
+                    font-weight: 600;
+                    box-sizing: border-box;
+                    color: var(--text-color);
+                }
+            }
+            
+            @media #{$BREAKPOINT-DESK} {
+                padding: 0px;
+            }
+        }
+
+        @media #{$BREAKPOINT-DESK} {
+            @include appMargin;
+            display: flex;
+            align-items: center;
+            margin-top: var(--space-2-5x);
+            margin-bottom: var(--space-4x);
+
+            .title {
+                display: block;
+                flex: 1 1 25%;            
+                text-align: right;
+                h1 {
+                    font-family: var(--font-secondary);
+                    font-weight: 700;
+                    font-size: 48px;
+                    color: var(--color-gray);
+                    text-align: right;
+                    
+                }
+            }
+
+            .tag {
+                flex: 1 0 75%;
+            }
+        }
+    }
+
+    .divider {
+        @include appMargin;
+        &::after {
+            content: "";
+            margin-bottom: var(--space-4x);
+            height: 1px;
+            width: 100%;
+            background-color: var(--gallery-divider-color);
+            display: block;
+        }
+    }
+
+    .gallery {
+        width: 100%;
+        @include appMargin;
+        .title {
+            font-family: var(--font-secondary);
+            font-size: var(--space-2-5x);
+            color: var(--color-gray);
+            font-weight: 700px;
+
+            @media #{$BREAKPOINT-DESK} {
+                font-size: var(--space-3x);
+            }
+        }
+
+        .photos {
+            margin: var(--space-4x) 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: stretch;
+            gap: 2px;
+
+            @mixin photoConfig {
+                flex: 1 0 calc(33% - 1px);
+                width: 100%;
+                box-sizing: content-box;
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                }
+            }
+
+            .photo {
+                height: 110px;
+                @include photoConfig;
+                @media #{$BREAKPOINT-DESK} {
+                    height: 367px;
+                }
+            }
+            .lastPhoto {
+                height: 150px;
+                @include photoConfig;
+                @media #{$BREAKPOINT-DESK} {
+                    height: 500px;
+                }
+            }
+        }
+
+    }
+}
+
+
