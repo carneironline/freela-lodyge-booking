@@ -2,7 +2,7 @@
 
 import { useContext } from 'react'
 import Image from 'next/image'
-import UserInterestBadge from './components/UserInterestBadge'
+import UserInterestBadge from '../UserInterestBadge';
 import { TagsControlContext } from '@/context'
 
 import BeachHouse1 from '@/assets/images/beach-house-1.jpg' 
@@ -30,7 +30,7 @@ const OfferCard = () => {
     return (
         <section className={styles.cardContainer}>
             <section className={styles.imgContainer}>
-                <UserInterestBadge />
+                <UserInterestBadge absolute top={21} left={4} />
                 <section>
                     <Image className={styles.mainPicture} src={BeachHouse1} alt="beach house" />
                 </section>
