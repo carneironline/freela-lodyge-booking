@@ -1,0 +1,57 @@
+@import '@/styles/mixins';
+
+.importantToKnow {
+    margin-bottom: var(--space-10x);
+}
+
+.title {
+    color: var(--color-gray);
+    font-size: 20px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 115%;
+    margin-bottom: var(--space-1-5x);
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: 24px;
+    }
+}
+
+.list:not(:last-child) {
+    border-bottom: 1px solid #DFD3BF;
+
+    @media #{$BREAKPOINT-DESK} {
+        border-bottom: none;
+    }
+}
+
+.list {
+    list-style-type: none;
+    padding-bottom: var(--space-2-5x);
+    margin-bottom: var(--space-2-5x);
+
+    li:not(:last-child) {
+        margin-bottom: var(--space-1-5x);
+    }
+}
+
+.listHeader {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.listItem {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.lists {
+    @media #{$BREAKPOINT-DESK} {
+        display: flex;
+        gap: 60px;
+    }
+}

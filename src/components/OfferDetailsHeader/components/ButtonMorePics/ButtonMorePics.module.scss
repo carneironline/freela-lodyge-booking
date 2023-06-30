@@ -1,0 +1,21 @@
+.buttonMorePics {
+    position: absolute;
+    z-index: 2;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 11px;
+    border-radius: 100px;
+    border: 1px solid var(--color-white);
+
+    color: #FFF;
+    font-size: 12px;
+    font-family: var(--font-secondary);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}

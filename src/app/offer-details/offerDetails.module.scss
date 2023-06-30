@@ -1,0 +1,147 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/breakpoints.scss';
+
+.header {
+    @include appMargin;
+
+    padding-top: 100px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-4x);
+    margin-bottom: var(--space-1-5x);
+    width: 100%;
+
+    @media #{$BREAKPOINT-DESK} {
+        gap: var(--space-2-5x);
+        justify-content: unset;
+
+    }
+
+}
+
+.title {
+    h1 {
+        color: var(--color-gray);
+        font-family: var(--font-secondary);
+        font-size: 32px;
+        font-weight: 700;
+        width: fit-content;
+
+        @media #{$BREAKPOINT-DESK} {
+            font-size: 48px;
+        }
+    }
+}
+
+.subtitle {
+    color:rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    line-height: 150%;
+    max-width: 260px;
+
+    @media #{$BREAKPOINT-DESK} {
+        max-width: none;
+    }
+    .location {
+        font-weight: 700;
+    }
+}
+
+.readMoreState {
+    display: none;
+}
+  
+.readMoreWrap {
+    overflow: hidden;
+    max-height: 320px; 
+    transition: max-height 0.25s ease;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    line-height: 150%;
+    margin-top: var(--space-4x);
+    margin-bottom: var(--space-2-5x);
+
+    @media #{$BREAKPOINT-DESK} {
+        max-height: 216px; 
+    }
+}
+  
+  .readMoreState:checked ~ .readMoreWrap {
+      max-height: 1000px;
+  }
+  
+  .readMoreState:checked ~ .readMoreTrigger {
+      display: none;
+  }
+  
+  .readMoreTrigger {
+      cursor: pointer;
+      color: #048ABF;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+  }
+
+  .lodyDiscoveryGuide {
+    margin-bottom: var(--space-8x);
+  }
+
+  .guideTitle {
+    color: var(--color-gray);
+    font-size: 20px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 115%;
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: 24px;
+    }
+  }
+
+  .guideText {
+    margin-top: var(--space-1-5x);
+    margin-bottom: var(--space-2-5x);
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .guideButton {
+    color: #048ABF;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .content {
+    @include appMargin;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: flex;
+        justify-content: space-between;
+    }
+  }
+
+  .sidebar {
+    display: none;
+
+    @media #{$BREAKPOINT-DESK} {
+        display: block; 
+    }
+  }
+
+  .mainContent {
+    @media #{$BREAKPOINT-DESK} {
+        max-width: 731px;
+    }
+  }

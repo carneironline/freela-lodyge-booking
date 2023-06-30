@@ -1,0 +1,28 @@
+@import '@/styles/mixins';
+
+.learnMoreCard {
+    padding: var(--space-2-5x);
+    border-radius: 5px;
+    border: 2px solid var(--color-beige-30);
+    margin-top: var(--space-4x);
+    margin-bottom: var(--space-8x);
+
+    @media #{$BREAKPOINT-DESK} {
+        margin-bottom: var(--space-4x);
+    }
+}
+
+.title {
+    color: var(--color-gray);
+    font-size: 20px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.description {
+    margin-top: var(--space-1-5x);
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    line-height: 150%;
+}

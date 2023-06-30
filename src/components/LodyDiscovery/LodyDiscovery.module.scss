@@ -1,0 +1,87 @@
+@import '@/styles/mixins';
+
+.title {
+    color: var(--color-gray);
+    font-size: 20px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 130%;
+    max-width: 200px;
+
+    @media #{$BREAKPOINT-DESK} {
+        max-width: none;
+        font-size: 24px;
+    }
+}
+
+.lodyDiscovery {
+    margin-bottom: var(--space-8x);
+}
+
+.relativeContainer {
+    position: relative;
+    height: 63px;
+
+    @media #{$BREAKPOINT-DESK} {
+        height: auto;
+    }
+}
+
+.imgContainer {
+    width: 175px;
+    height: 63px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    position: relative;
+    
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.overlay {
+    border-radius: 12px;
+    opacity: 0.75;
+    background: linear-gradient(90deg, #000 0%, rgba(204, 184, 153, 0.00) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.wrapper {
+    margin-top: var(--space-1-5x);
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+
+    @media #{$BREAKPOINT-DESK} {
+        flex-wrap: wrap;
+        gap: 10px;
+        position: relative;
+    }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.imgTitle {
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 125%;
+}

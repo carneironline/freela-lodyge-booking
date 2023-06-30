@@ -6,10 +6,12 @@
     background-color: var(--color-blue-50);
     border-radius: 12px;
     padding: var(--space-4x) var(--space-4x) var(--space-5x) var(--space-4x);
+    margin-bottom: var(--space-10x);
 
     @media #{$BREAKPOINT-DESK} {
         display: flex;
         justify-content: space-between;
+        margin-bottom: var(--space-8x);
     }
 }
 
