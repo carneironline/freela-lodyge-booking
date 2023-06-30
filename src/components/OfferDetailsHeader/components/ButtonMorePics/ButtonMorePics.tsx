@@ -5,7 +5,7 @@ import AddPhotoIcon from '@/assets/icons/add-photo.png'
 
 const ButtonMorePics = () => {
     return (
-        <a href="#" className={styles.buttonMorePics}>
+        <a style={{ cursor: "pointer" }} href="/gallery/2" className={styles.buttonMorePics}>
             <Image src={AddPhotoIcon} alt={``} />
             Mais Fotos
         </a>
