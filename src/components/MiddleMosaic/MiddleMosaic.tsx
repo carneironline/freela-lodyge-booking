@@ -13,7 +13,7 @@ import mask9 from '@/assets/images/mosaic/mask9.png';
 import mask10 from '@/assets/images/mosaic/mask10.png';
 import Image from 'next/image';
 
-function MiddleMosaic(props) {
+function MiddleMosaic() {
   return (
     <section className={styles.middleSection}>
       <div className={styles.text}>

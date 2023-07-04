@@ -15,7 +15,7 @@ import styles from './detailtags.module.scss'
 function DetailTags() {
   const { isModalOpen, clickHandler } = useContext(TagsControlContext);
 
-  const icons = {
+  const icons: any = {
     1: DogSVG,
     2: WifiSVG,
     3: Campfire,

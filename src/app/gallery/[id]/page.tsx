@@ -7,7 +7,7 @@ import LeftArrow from '@/assets/icons/arrow-left.svg';
 import Campfire from '@/assets/icons/tagsWhite/Campfire.svg';
 import Image, { StaticImageData } from 'next/image';
 
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
@@ -70,7 +70,7 @@ export default function PhotoGallery() {
     </div>
   );
 
-  const Tags = ({className}) => {
+  const Tags = ({className}: any) => {
     const titles = [];
     for (let key in data) {
       titles.push(`${key.charAt(0).toUpperCase()}${key.slice(1)}`);
@@ -142,7 +142,7 @@ export default function PhotoGallery() {
         <Lightbox
           open={openLightbox}
           close={() => setOpenLightBox(false)}
-          slides={selectedSection ? data[selectedSection as keyof GalleryData].map(image => image) : []}
+          slides={selectedSection ? data[selectedSection as keyof GalleryData].map(image => image) as SlideImage[] : []}
         />
       </aside>
       <Footer />
