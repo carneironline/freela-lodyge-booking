@@ -11,27 +11,28 @@ import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-import quarto1 from '@/assets/images/gallery/quarto1.jpg';
-import quarto2 from '@/assets/images/gallery/quarto2.jpg';
-import quarto3 from '@/assets/images/gallery/quarto3.jpg';
-import quarto4 from '@/assets/images/gallery/quarto4.jpg';
+import quarto1 from '@/assets/images/gallery/quarto1.png';
+import quarto2 from '@/assets/images/gallery/quarto2.png';
+import quarto3 from '@/assets/images/gallery/quarto3.png';
+import quarto4 from '@/assets/images/gallery/quarto4.png';
 
-import interior1 from '@/assets/images/gallery/interior1.jpg';
-import interior2 from '@/assets/images/gallery/interior2.jpg';
-import interior3 from '@/assets/images/gallery/interior3.jpg';
-import interior4 from '@/assets/images/gallery/interior4.jpg';
+import interior1 from '@/assets/images/gallery/interior1.png';
+import interior2 from '@/assets/images/gallery/interior2.png';
+import interior3 from '@/assets/images/gallery/interior3.png';
+import interior4 from '@/assets/images/gallery/interior4.png';
 
-import externa1 from '@/assets/images/gallery/externa1.jpg';
-import externa2 from '@/assets/images/gallery/externa2.jpg';
-import externa3 from '@/assets/images/gallery/externa3.jpg';
-import externa4 from '@/assets/images/gallery/externa4.jpg';
+import externa1 from '@/assets/images/gallery/externa1.png';
+import externa2 from '@/assets/images/gallery/externa2.png';
+import externa3 from '@/assets/images/gallery/externa3.png';
+import externa4 from '@/assets/images/gallery/externa4.png';
 
-import experiencia1 from '@/assets/images/gallery/experiencia1.jpg';
-import experiencia2 from '@/assets/images/gallery/experiencia2.jpg';
-import experiencia3 from '@/assets/images/gallery/experiencia3.jpg';
-import experiencia4 from '@/assets/images/gallery/experiencia4.jpg';
+import experiencia1 from '@/assets/images/gallery/experiencia1.png';
+import experiencia2 from '@/assets/images/gallery/experiencia2.png';
+import experiencia3 from '@/assets/images/gallery/experiencia3.png';
+import experiencia4 from '@/assets/images/gallery/experiencia4.png';
 import { useState } from 'react';
 import Menu from '@/components/Menu/Menu';
+import Link from 'next/link';
 
 const MAX_AMOUNT_OF_IMAGES = 4;
 
@@ -55,12 +56,8 @@ export default function PhotoGallery() {
   const [selectedSection, setSelectedSection] = useState('');
 
   const showLightbox = (section : string) => {
-    console.log('====================================');
-    console.log(openLightbox, section);
-    console.log('====================================');
     setOpenLightBox(!openLightbox);
     setSelectedSection(section)
-    console.log(data[selectedSection as keyof GalleryData].map(image => ({ src: image })))
   }
 
   const Tag = ({ title }: { title: string }) => (
@@ -78,21 +75,36 @@ export default function PhotoGallery() {
     return (
       <div className={className}>
         {
-          titles.map(title => <Tag title={title} key={title} />)
+          titles.map(title => <span onClick={() => {
+            const el = document.getElementById(title);
+            el?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center', 
+              inline: 'nearest',
+            });
+          }}>
+            <Tag title={title} key={title} />
+          </span>)
         }
       </div>
     );
   }
 
 
-  const Gallery = ({ title, images, section }: { title: string, images: string[] | StaticImageData[], section: string }) => (
-    <div className={styles.gallery}>
+  const Gallery = ({id,  title, images, section }: { title: string, images: string[] | StaticImageData[], section: string, id: string }) => (
+    <div className={styles.gallery} id={id}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.photos}>
         {
           images.map((image: string | StaticImageData, index) => (
             <div className={index === MAX_AMOUNT_OF_IMAGES - 1 ? styles.lastPhoto : styles.photo}>
-              <Image src={image} alt={`An image of the ${title} part of the house.`} className={styles.photo} onClick={() => showLightbox(section)}/>
+              <Image
+                src={image}
+                alt={`An image of the ${title} part of the house.`}
+                className={styles.photo}
+                placeholder="blur"
+                onClick={() => showLightbox(section)}
+              />
             </div>
           ))
         }
@@ -109,7 +121,7 @@ export default function PhotoGallery() {
     return (
       <>
         {
-          titles.map(section => <Gallery title={section.title} key={section.title} images={section.images} section={section.title.toLowerCase()} />)
+          titles.map(section => <Gallery id={section.title} title={section.title} key={section.title} images={section.images} section={section.title.toLowerCase()} />)
         }
       </>
     );
