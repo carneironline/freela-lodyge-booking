@@ -85,4 +85,8 @@
 
 .mobiNav {
     padding: var(--space-6x) var(--space-6x) var(--space-4x) var(--space-6x);
+
+    a { 
+        font-size: var(--font-size-m);
+    }
 }

@@ -11,6 +11,7 @@ import SearchBar from "./SearchBar"
 import UserInterestBadge from "./UserInterestBadge"
 import LodyDiscovery from "./LodyDiscovery"
 import LearnMoreCard from "./LearnMoreCard"
+import PlayerModal from "./PlayerModal"
 
 export {
     Button,
@@ -25,5 +26,6 @@ export {
     SearchBar,
     UserInterestBadge,
     LodyDiscovery,
-    LearnMoreCard
+    LearnMoreCard,
+    PlayerModal
 }

@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <section className={styles.companyInfo}>
                 <div className={styles.logo}>
-                    <Image src={Logo} alt={''} />
+                    <Image src={Logo} alt={''} quality={100} />
                     <p className={styles.slogan}>Lugares únicos,<br /> como você</p>
                 </div>
 
@@ -49,10 +49,10 @@ const Footer = () => {
                 <div className={styles.navLinksContainer}>
                     <h3 className={styles.navListHeader}>SOCIAL</h3>
                     <ul className={styles.footerSocialList}>
-                        <li><a href='#'><Image src={Insta} alt={''} /></a></li>
-                        <li><a href='#'><Image src={Facebook} alt={''} /></a></li>
-                        <li><a href='#'><Image src={Youtube} alt={''} /></a></li>
-                        <li><a href='#'><Image src={Tiktok} alt={''} /></a></li>
+                        <li><a href='#'><Image src={Insta} alt={''} quality={100}/></a></li>
+                        <li><a href='#'><Image src={Facebook} alt={''} quality={100}/></a></li>
+                        <li><a href='#'><Image src={Youtube} alt={''} quality={100}/></a></li>
+                        <li><a href='#'><Image src={Tiktok} alt={''} quality={100}/></a></li>
                     </ul>
                 </div>
             </nav>

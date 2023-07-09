@@ -20,6 +20,8 @@
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-player": "^2.12.0",
+    "react-responsive-modal": "^6.4.2",
     "sass": "1.62.1",
     "sharp": "0.32.1",
     "typescript": "5.0.4",

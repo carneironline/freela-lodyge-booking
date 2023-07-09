@@ -2,12 +2,15 @@
 
 import { useContext } from 'react'
 import Image from 'next/image'
-import UserInterestBadge from '../UserInterestBadge';
+import UserInterestBadge from '../UserInterestBadge'
 import { TagsControlContext } from '@/context'
 import Link from 'next/link';
 import BeachHouse1 from '@/assets/images/beach-house-1.jpg' 
 import BeachHouse2 from '@/assets/images/beach-house-2.jpg' 
 import BeachHouse3 from '@/assets/images/beach-house-3.jpg'
+import Lody1 from '@/assets/images/lody-offer-1.png' 
+import Lody2 from '@/assets/images/lody-offer-2.png' 
+import Lody3 from '@/assets/images/lody-offer-3.png'
 import CallBell from '@/assets/icons/tagsWhite/CallBell.svg'
 import Campfire from '@/assets/icons/tagsWhite/Campfire.svg'
 import Garage from '@/assets/icons/tagsWhite/Garage.svg'
@@ -31,16 +34,16 @@ const OfferCard = () => {
         <section className={styles.cardContainer}>
             <Link href="/offer-details">
                 <section className={styles.imgContainer}>
-                    <UserInterestBadge absolute top={21} left={4} />
+                    <UserInterestBadge absolute />
                     <section>
-                        <Image className={styles.mainPicture} src={BeachHouse1} alt="beach house" />
+                        <Image className={styles.mainPicture} src={Lody1} quality={100} alt="beach house" />
                     </section>
                     <section className={styles.imagContainerCol2}>
                         <section className={styles.secondaryImgsContainer}>
-                            <Image className={styles.secondPicture} src={BeachHouse2} alt="beach house" />
+                            <Image className={styles.secondPicture} src={Lody2} quality={100} alt="beach house" />
                         </section>
                         <section className={styles.secondaryImgsContainer}>
-                            <Image className={styles.thirdPicture} src={BeachHouse3} alt="beach house" />
+                            <Image className={styles.thirdPicture} src={Lody3} quality={100} alt="beach house" />
                         </section>
                     </section>
                 </section>
@@ -59,9 +62,9 @@ const OfferCard = () => {
                     }
                     <div className={styles.moreTags}>+12</div>
                 </button>
-                <button onClick={clickHandler} className={styles.externalLinkButton}>
+                <a href="/offer-details" className={styles.externalLinkButton}>
                     <Image className={styles.externalLinkIcon} src={ExternalLinkIcon} alt={''} />
-                </button>
+                </a>
             </section>
         </section>
     )

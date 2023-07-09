@@ -23,21 +23,21 @@ export const NavLinks = ({ containerClass, className, isClickable }: NavigationT
     return (
         <section className={styles.navContainer} style={{position: 'relative'}}>
             <nav className={className}>
-                <Link url="/#aboutMe" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.home')}</Link>
-                <Link url="/#clients" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.about')}</Link>
-                <Link url="/#portfolio" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.register')}</Link>
+                <Link url="/" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.home')}</Link>
+                <Link url="/#lodys" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.about')}</Link>
+                <Link url="/#register" onClick={isClickable ? clickHandler : undefined}>{translate('components.menu.register')}</Link>
                 <Button type="primary">
                     {translate('components.menu.login')}
                 </Button>
             </nav>
             <hr className={styles.division} />
             <section className={styles.overviewContainer}>
-                <button className={styles.tokenButton}>
+                <a href="https://ldt-token.webflow.io/" className={styles.tokenButton}>
                     LDT <span className={styles.tokenTypeText}>| Token</span>
-                </button>
-                <button className={styles.tokenButton}>
+                </a>
+                <a href="https://lodykeys.webflow.io/" className={styles.tokenButton}>
                     LODYKEYS <span className={styles.tokenTypeText}>| NFT</span>
-                </button>
+                </a>
             </section>
             <section className={styles.localesContainer}>
                 <Image src={Global} alt="Internationalization" /><ToggleLocation />

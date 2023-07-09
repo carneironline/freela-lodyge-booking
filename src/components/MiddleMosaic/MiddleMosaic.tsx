@@ -17,10 +17,10 @@ function MiddleMosaic() {
   return (
     <section className={styles.middleSection}>
       <div className={styles.text}>
-        <h2>
+        <h2 className={styles.title}>
           Explore imóveis únicos<br/>com experiências inéditas
         </h2>
-        <p>Cada Lody é pensada nos mínimos detalhes para você viver o agora e focar no mundo real. <br/>
+        <p className={styles.subtitle}>Cada Lody é pensada nos mínimos detalhes para você viver o agora e focar no mundo real. <br/>
         Tudo privativo para você e seu convidado aproveitar cada momento.</p>
       </div>
       <div className={styles.mosaicFirst}>

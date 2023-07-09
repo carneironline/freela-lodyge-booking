@@ -1,6 +1,6 @@
 export default {
    home: "Home",
-   about: "Lody's",
+   about: "Lodys",
    register: "Register",
    login: "Login"
 }

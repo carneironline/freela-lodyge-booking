@@ -1,6 +1,6 @@
 export default {
    home: "Início",
-   about: "Lody's",
+   about: "Lodys",
    register: "Criar conta",
    login: "Entrar"
 }
