@@ -11,6 +11,7 @@ const ExperiencesList = () => {
                 <Image 
                 src={Forest} 
                 alt={''}
+                quality={100}
                 style={{
                     objectFit: 'cover',
                     position: 'relative',
@@ -23,7 +24,7 @@ const ExperiencesList = () => {
             <div className={styles.secondCol}>
                 <div>
                     <h2 className={styles.title}>
-                        Mais flexibilidade e Liberdade que um hotel, mais comodidade que um Airbnb
+                        Mais flexibilidade e Liberdade<br /> que um hotel, mais comodidade<br /> que um Airbnb
                     </h2>
                     <p className={styles.subtitle}>A Lodyge foi pensada para assumir escolhas inteligentes, você pode ditar a liberdade e comodidade que deseja</p>
                 </div>
@@ -39,50 +40,50 @@ const ExperiencesList = () => {
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Experiências Inéditas</h4>
+                            <p>Cada Lody tem uma experiência exclusiva. Chegar de Mountain Bike em uma praia paradisíaca ou uma bicicleta aquática? Experimente todas.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Sempre Pet Friendly</h4>
+                            <p>Não precisa nem perguntar. Leve seu doguinho, tem uma cama pra ele.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Check Out Flexível</h4>
+                            <p>Não sabe se quer voltar na segunda ou domingo. Ative o check out flexível sem taxas extras.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Serviços Flexíveis</h4>
+                            <p>Você pode solicitar limpeza extra, toalhas novas ou ficar dias sem ver ninguém. Your choice.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Convide Amigos</h4>
+                            <p>É uma Lody para 4 pessoas? Decida se quer ir com o seu alguém, sozinho(a) ou invite até 4 amigos sem taxas extras.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Fast Check-in</h4>
+                            <p>Você decidiu ir pra um Lody agora? Se está disponível, apenas reserve e vá, não importa se for 3 da manhã.</p>
                         </div>
                     </li>
                     <li>
                         <div className={styles.experienceItem}>
                             <Image src={Dog} alt={''} />
-                            <h4>Food Experience</h4>
-                            <p>Tenha acesso a refeições rápidas, bebidas e vinhos espetaculares ou traga o seu de sua casa. Quer cozinhar algo especial? Você decide.</p>
+                            <h4>Alta velocidade</h4>
+                            <p>Cada lody tem Starlink e banda larga com no mínimo 100MB de velocidade.</p>
                         </div>
                     </li>
                 </ul>

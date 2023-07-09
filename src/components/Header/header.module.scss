@@ -57,7 +57,7 @@
 }
 
 .headerTitleMobi {
-    font-size: 32px;
+    font-size: var(--font-size-xl);
 
     @media #{$BREAKPOINT-DESK} {
         display: none;
@@ -65,7 +65,7 @@
 }
 
 .headerTitleDesk {
-    font-size: 48px;
+    font-size: var(--font-size-3xl);
     display: none;
 
     @media #{$BREAKPOINT-DESK} {

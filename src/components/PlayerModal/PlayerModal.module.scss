@@ -1,0 +1,11 @@
+@import '@/styles/breakpoints';
+
+.player {
+    overflow: hidden;
+    border-radius: 10px;
+    
+    @media #{$BREAKPOINT-DESK} {
+        width: 760px;
+        height: 461px;
+    }
+}

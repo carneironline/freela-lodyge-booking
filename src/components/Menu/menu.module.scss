@@ -19,27 +19,46 @@
     align-items: center;
 
     @media #{$BREAKPOINT-DESK} {
-        padding: var(--space-4x) var(--space-6x);
+        height: 100px;
+        padding: var(--space-4x) var(--space-5-5x);
         justify-content: space-between;
+    }
+}
+
+.logoLink {
+    width: 100px;
+    height: 25px;
+    z-index: 6;
+
+    @media #{$BREAKPOINT-DESK} {
+        width: 135px;
+        height: 34px;
+        margin-right: var(--space-8x);
     }
 }
 
 .logo {
     width: 100px;
     height: 25px;
-    z-index: 6;
 
     @media #{$BREAKPOINT-DESK} {
-        margin-right: var(--space-8x);
+        width: 135px;
+        height: 34px;
     }
 }
 
 .deskNavi {
     display: flex;
     gap: var(--space-4x);
+    white-space: nowrap;
+
+    @media #{$BREAKPOINT-DESK} {
+        gap: var(--space-3-3x);
+    }
 
     a { 
-        margin: 0; 
+        margin: 0;
+        font-size: var(--font-size-s);
     }
 
     a:hover {

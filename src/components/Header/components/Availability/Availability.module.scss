@@ -1,9 +1,15 @@
+@import '@/styles/breakpoints';
+
 .availability {
     margin-top: var(--space-5x);
-    font-size: 12px;
+    font-size: var(--font-size-xs);
     font-weight: 500;
     color: var(--color-white);
     text-align: center;
+
+    @media #{$BREAKPOINT-DESK} {
+        font-size: var(--font-size-s);
+    }
 }
 
 .highlight {

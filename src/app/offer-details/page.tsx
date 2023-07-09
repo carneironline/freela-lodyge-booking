@@ -6,7 +6,8 @@ import {
     OfferDetailsHeader, 
     UserInterestBadge,
     LodyDiscovery,
-    LearnMoreCard
+    LearnMoreCard,
+    PlayerModal
 } from '@/components'
 import ChevronDownBlue from '@/assets/icons/chevron-down-blue.svg'
 import arrowRight from '@/assets/icons/arrow-right.svg'
@@ -98,6 +99,7 @@ const OfferDetails = () => {
                 </aside>
             </section>
             <Footer />
+            <PlayerModal />
         </section>
     )
 }

@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google'
 import { 
   LocaleProvider, 
   MenuControlProvider, 
-  TagsControlProvider 
+  TagsControlProvider,
+  PlayerModalProvider,
 } from '@/context';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,7 +25,9 @@ export default function RootLayout({
           <MenuControlProvider>
             <LocaleProvider>
               <TagsControlProvider>
-                {children}
+                <PlayerModalProvider>
+                  {children}
+                </PlayerModalProvider>
               </TagsControlProvider>
             </LocaleProvider>
           </MenuControlProvider>

@@ -21,7 +21,7 @@
     position: relative;
     
     @media #{$BREAKPOINT-DESK} {
-        width: 50%;
+        width: 40%;
         height: 843px;
     }
 
@@ -46,7 +46,7 @@
 
 .secondCol {
     @media #{$BREAKPOINT-DESK} {
-        width: 50%;
+        width: 60%;
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -57,7 +57,8 @@
     list-style-type: none;
 
     li {
-        break-inside: avoid
+        break-inside: avoid;
+        max-width: 255px;
     }
 
     li:not(:last-child) {
@@ -68,37 +69,45 @@
         columns: 2;
         -webkit-columns: 2;
         -moz-columns: 2;
+        column-gap: var(--space-10-5x);
     }
 }
 
 .title {
-    color: #313131;
-    font-size: 24px;
+    color: var(--color-gray);
+    font-size: var(--font-size-1l);
     font-family: var(--font-secondary);
     font-weight: 700;
     margin-bottom: var(--space-2-5x);
 
     @media #{$BREAKPOINT-DESK} {
-        font-size: 36px;
+        font-size: var(--font-size-2xl);
     }
 }
 
 .subtitle {
     margin-bottom: var(--space-4x);
     color: rgba(0, 0, 0, 0.75);
-    font-size: 14px;
+    font-size: var(font-size-s);
+    line-height: 150%;
+    
+    @media #{$BREAKPOINT-DESK} {
+        font-size: var(--font-size-m);
+    }
 }
 
 .experienceItem {
     h4 {
         margin-bottom: var(--space-0-5x);
-        color: #000;
-        size: 16px;
+        color: var(--color-gray);
+        size: var(--font-size-m);
         font-weight: 700;
     }
 
     p {
-        font-size: 14px;
+        font-size: var(--font-size-s);
+        font-weight: 300;
+        line-height: 150%;
         color: rgba(0, 0, 0, 0.75);
     }
 }

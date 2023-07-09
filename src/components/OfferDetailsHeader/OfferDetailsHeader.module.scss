@@ -22,17 +22,44 @@
     }
 }
 
+.mainPictureContainer {
+    position: relative;
+}
+
+.mainPictureContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-gray), transparent);
+    border-radius: 5px;
+
+    @media #{$BREAKPOINT-DESK} {
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        height: 342px;
+        width: 833px;
+    }
+}
+
 .mainPicture {
     width: 100%;
     height: 225px;
     object-fit: cover;
     border-radius: 5px;
+    
 
     @media #{$BREAKPOINT-DESK} {
         height: 342px;
         width: 833px;
-        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
-        position: absolute;
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        mask-size: cover;
+        mask-repeat: no-repeat;
     }
 }
 
@@ -43,6 +70,7 @@
 
     @media #{$BREAKPOINT-DESK} {
         flex-direction: column;
+        align-items: flex-end;
         width: 324px;
         gap: 14px;
         margin-left: auto;
@@ -53,22 +81,32 @@
     width: 50%;
     height: 158px;
     border-radius: 5px;
-
-    @media #{$BREAKPOINT-DESK} {
-        width: 324px;
-        height: 165px;
-    }
+    object-fit: cover;
 }
 
 .secondPicture {
     @media #{$BREAKPOINT-DESK} {
-        clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-2.svg');
+        mask-image: url('../../assets/images/lody-details-mask-2.svg');
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        width: 319px;
+        height: 165px;
+        position: absolute;
     }
 }
 
 .thirdPicture {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+
+    @media #{$BREAKPOINT-DESK} {
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-3.svg');
+        mask-image: url('../../assets/images/lody-details-mask-3.svg');
+        mask-size: cover;
+        mask-repeat: no-repeat;
+    }
 }
 
 .thirdPictureContainer {
@@ -77,20 +115,27 @@
     position: relative;
 
     @media #{$BREAKPOINT-DESK} {
-        width: 390px;
+        width: 375px;
         height: 165px;
-        clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%);
         position: absolute;
         bottom: 0;  
         right: 0;
     }
 }
 
-.overlay {
-    border-radius: 5px;
+.playContainer {
     position: absolute;
-    z-index: 1;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(49, 49, 49, 0.81) 100%);
-    width: 100%;
-    height: 100%;
+    z-index: 3;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: var(--space-8-8x);
+    background: transparent;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+
+    @media #{$BREAKPOINT-DESK} {
+        top: var(--space-13x);
+    }
 }

@@ -5,6 +5,10 @@
     @include appMargin;
 
     padding-top: 100px;
+
+    @media #{$BREAKPOINT-DESK} {
+        padding-top: 132px;
+    }
 }
 
 .titleContainer {
@@ -19,7 +23,7 @@
     @media #{$BREAKPOINT-DESK} {
         gap: var(--space-2-5x);
         justify-content: unset;
-
+        margin-top: var(--space-8x);
     }
 
 }
@@ -61,13 +65,14 @@
     max-height: 320px; 
     transition: max-height 0.25s ease;
     color: rgba(0, 0, 0, 0.75);
-    font-size: 14px;
+    font-size: var(--font-size-s);
     line-height: 150%;
     margin-top: var(--space-4x);
     margin-bottom: var(--space-2-5x);
 
     @media #{$BREAKPOINT-DESK} {
         max-height: 216px; 
+        font-size: var(--font-size-m);
     }
 }
   

@@ -12,7 +12,7 @@ export default function Home() {
     <section>
       <Header />
       <DetailTags />
-      <section className={styles.offersList}>
+      <section className={styles.offersList} id="lodys">
         <OfferCard />
         <OfferCard />
       </section>

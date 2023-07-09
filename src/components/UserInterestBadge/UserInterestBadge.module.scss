@@ -1,8 +1,31 @@
+@import '@/styles/breakpoints';
+
 .interestBadge {
-    padding: var(--space-0-5x) var(--space-1-5x);
-    background-color: var(--color-white);
+    position: relative;
     border-radius: 50px;
-    font-size: 12px;
-    max-width: 182px;
-    max-height: 30px;
-}
+    padding: var(--space-0-5x) var(--space-1-5x);
+    max-width: fit-content;
+    height: fit-content;
+    color: #000;
+    background-color: var(--color-white);
+    font-size: var(--font-size-2xs);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @media #{$BREAKPOINT-DESK} {
+        font-size: var(--font-size-xs);
+    }
+
+    &.absolute {
+      position: absolute;
+      top: 13px;
+      left: 6px;
+      
+      @media #{$BREAKPOINT-DESK} {
+        top: 21px;
+        left: 4px;
+      }
+    }
+  }

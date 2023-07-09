@@ -8,7 +8,9 @@ import ToggleLocationDesk from './components/ToggleLocationDesk'
 const Menu = () => {
     return (
         <header className={styles.menu}>
-            <Image src={Logo} alt="Lodyge" className={styles.logo} />
+            <a href="/" className={styles.logoLink}>
+                <Image src={Logo} alt="Lodyge" className={styles.logo} />
+            </a>
             <Hamburguer />
             <section className={styles.deskNavContainer}>
                 <Navigation className={styles.deskNavi} />
