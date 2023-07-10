@@ -37,8 +37,8 @@
     border-radius: 5px;
 
     @media #{$BREAKPOINT-DESK} {
-        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.svg');
-        mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.png');
+        mask-image: url('../../assets/images/lody-details-mask-1.png');
         mask-repeat: no-repeat;
         mask-size: cover;
         height: 342px;
@@ -56,8 +56,8 @@
     @media #{$BREAKPOINT-DESK} {
         height: 342px;
         width: 833px;
-        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.svg');
-        mask-image: url('../../assets/images/lody-details-mask-1.svg');
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-1.png');
+        mask-image: url('../../assets/images/lody-details-mask-1.png');
         mask-size: cover;
         mask-repeat: no-repeat;
     }
@@ -86,8 +86,8 @@
 
 .secondPicture {
     @media #{$BREAKPOINT-DESK} {
-        -webkit-mask-image: url('../../assets/images/lody-details-mask-2.svg');
-        mask-image: url('../../assets/images/lody-details-mask-2.svg');
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-2.png');
+        mask-image: url('../../assets/images/lody-details-mask-2.png');
         mask-size: cover;
         mask-repeat: no-repeat;
         width: 319px;
@@ -102,8 +102,8 @@
     object-fit: cover;
 
     @media #{$BREAKPOINT-DESK} {
-        -webkit-mask-image: url('../../assets/images/lody-details-mask-3.svg');
-        mask-image: url('../../assets/images/lody-details-mask-3.svg');
+        -webkit-mask-image: url('../../assets/images/lody-details-mask-3.png');
+        mask-image: url('../../assets/images/lody-details-mask-3.png');
         mask-size: cover;
         mask-repeat: no-repeat;
     }
