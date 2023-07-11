@@ -15,6 +15,12 @@ import LodyDiscovery5 from './lody-discovery-5.png'
 import LodyDiscovery6 from './lody-discovery-6.png'
 import LodyDiscovery7 from './lody-discovery-7.png'
 import LodyDiscovery8 from './lody-discovery-8.png'
+import Lody2Offer1 from './lody-2-offer-1.png'
+import Lody2Offer2 from './lody-2-offer-2.png'
+import Lody2Offer3 from './lody-2-offer-3.png'
+import LodyOffer1 from './lody-offer-1.png'
+import LodyOffer2 from './lody-offer-2.png'
+import LodyOffer3 from './lody-offer-3.png'
 
 export {
     Jetski,
@@ -34,4 +40,10 @@ export {
     LodyDiscovery6,
     LodyDiscovery7,
     LodyDiscovery8,
+    Lody2Offer1,
+    Lody2Offer2,
+    Lody2Offer3,
+    LodyOffer1,
+    LodyOffer2,
+    LodyOffer3
 }
