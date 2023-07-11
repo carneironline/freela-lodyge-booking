@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
-import Image from 'next/image'
-import Icon from '@/assets/icons/mountains.png'
+import Image, { StaticImageData } from 'next/image'
 import styles from './CheckboxButton.module.scss'
 import { useState } from 'react'
 
 type CheckboxButtonType = {
     type: string;
     children: ReactNode;
+    Icon: StaticImageData;
 };
 
-const CheckboxButton = ({ type, children }: CheckboxButtonType) => {
+const CheckboxButton = ({ type, children, Icon }: CheckboxButtonType) => {
     const [checked, setChecked] = useState(false);
 
     return (

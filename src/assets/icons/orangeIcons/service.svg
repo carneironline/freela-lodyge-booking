@@ -1,0 +1,34 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" fill="#1E1E1E"/>
+<g id="&#240;&#159;&#148;&#180; - Home Workspace">
+<rect id="Home Workspace" x="-2091" y="-2816" width="4176" height="13772" rx="10" fill="#383838"/>
+</g>
+<g id="&#240;&#159;&#148;&#180; - 01.001 &#226;&#128;&#162; Landing Page" clip-path="url(#clip0_0_1)">
+<rect width="1440" height="3264" transform="translate(-1021 -2220)" fill="#E9E0D1"/>
+<g id="# content">
+<g id="section">
+<g id="list">
+<g id="Line 1">
+<g id="box">
+<g id="Service" clip-path="url(#clip1_0_1)">
+<path id="Vector" d="M3 22H29" stroke="#D97E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M3 26H29" stroke="#D97E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M16 8V4" stroke="#D97E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M13 4H19" stroke="#D97E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M5 22V19C5 16.0826 6.15893 13.2847 8.22183 11.2218C10.2847 9.15893 13.0826 8 16 8C18.9174 8 21.7153 9.15893 23.7782 11.2218C25.8411 13.2847 27 16.0826 27 19V22" stroke="#D97E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="3264" fill="white" transform="translate(-1021 -2220)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

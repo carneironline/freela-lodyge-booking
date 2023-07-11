@@ -1,13 +1,13 @@
 "use client";
 
 import { useContext } from 'react'
-import styles from './OfferDetailsHeader.module.scss'
 import Image from 'next/image'
-
-import { LodyDetails1, LodyDetails2, LodyDetails3 } from '@/assets/images'
-import Play from '../../assets/icons/play.png'
-import ButtonMorePics from './components/ButtonMorePics'
 import { PlayerModalContext } from '@/context';
+
+import ButtonMorePics from './components/ButtonMorePics'
+import Play from '../../assets/icons/play.png'
+import { LodyDetails1, LodyDetails2, LodyDetails3 } from '@/assets/images'
+import styles from './OfferDetailsHeader.module.scss'
 
 const OfferDetailsHeader = () => {
   const { clickHandler } = useContext(PlayerModalContext);
