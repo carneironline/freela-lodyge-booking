@@ -19,6 +19,7 @@
     "i18n-js": "4.2.3",
     "next": "13.4.4",
     "react": "18.2.0",
+    "react-date-range": "^1.4.0",
     "react-dom": "18.2.0",
     "react-player": "^2.12.0",
     "react-responsive-modal": "^6.4.2",
@@ -28,6 +29,8 @@
     "yet-another-react-lightbox": "3.11.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
+    "@types/react-date-range": "^1.4.4",
     "@types/sharp": "0.32.0"
   }
 }

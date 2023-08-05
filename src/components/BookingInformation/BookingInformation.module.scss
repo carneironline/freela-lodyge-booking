@@ -1,0 +1,27 @@
+.container {
+	position: sticky;
+	top: 30px;
+	width: 350px;
+	height: 588px;
+	background: white;
+	border-radius: 12px;
+	padding: 30px;
+}
+
+.top {
+	display: flex;
+	gap: 20px;
+
+	.topLabel {
+		font-family: Gilroy;
+		font-size: 16px;
+		font-weight: 700;
+		color: rgba(49, 49, 49, 0.5);
+	}
+
+	.topText {
+		font-family: Gilroy;
+		font-size: 16px;
+		font-weight: 300;
+	}
+}
