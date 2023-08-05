@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding-top: 22px;
+	gap: 12px;
+}
+
+.title {
+	font-family: Gilroy;
+	font-size: 18px;
+	font-weight: 700;
+	color: rgba(49, 49, 49, 0.5);
+}
