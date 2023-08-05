@@ -10,7 +10,7 @@ import {
 	Lody2Offer1,
 	Lody2Offer2,
 	Lody2Offer3,
-	LodyOffer1,
+	LodyOffer1 as lodyOffer1,
 	LodyOffer2,
 	LodyOffer3,
 } from "@/assets/images";
@@ -24,7 +24,7 @@ export default function Home() {
 				<OfferCard
 					title="Lody Descoberta"
 					subtitle="Angra dos Reis, apenas 2 horas de você"
-					image1={LodyOffer1}
+					image1={lodyOffer1}
 					image2={LodyOffer2}
 					image3={LodyOffer3}
 				/>

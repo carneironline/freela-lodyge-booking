@@ -9,8 +9,8 @@ import {
 	LearnMoreCard,
 	PlayerModal,
 } from "@/components";
-import ChevronDownBlue from "@/assets/icons/chevron-down-blue.svg";
-import arrowRight from "@/assets/icons/arrow-right.svg";
+import ChevronDownBlue from "@/assets/icons/chevron-down-blue.svg?url";
+import arrowRight from "@/assets/icons/arrow-right.svg?url";
 import ImportantToKnow from "@/components/ImportantToKnow";
 import { ModalCalendar } from "@/components/ModalCalendar";
 import { BookingInformation } from "@/components/BookingInformation";
