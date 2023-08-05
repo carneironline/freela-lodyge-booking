@@ -12,6 +12,7 @@ import ChevronDownBlue from "@/assets/icons/chevron-down-blue.svg?url";
 import arrowRight from "@/assets/icons/arrow-right.svg?url";
 import ImportantToKnow from "@/components/ImportantToKnow";
 import { ModalCalendar } from "@/components/ModalCalendar";
+import { BookingInformation } from "@/components/BookingInformation";
 
 const OfferDetails = () => {
 	return (
@@ -95,14 +96,7 @@ const OfferDetails = () => {
 					<ImportantToKnow />
 				</main>
 				<aside className={styles.sidebar}>
-					<section
-						style={{
-							width: 350,
-							height: 588,
-							background: "white",
-							borderRadius: 12,
-						}}
-					></section>
+					<BookingInformation />
 				</aside>
 			</section>
 			<Footer />

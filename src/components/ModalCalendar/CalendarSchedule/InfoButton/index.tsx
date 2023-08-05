@@ -1,4 +1,3 @@
-import Image from "next/image";
 import InfoCircleSvg from "@/assets/icons/info-circle.svg";
 import styles from "./InfoButton.module.scss";
 
