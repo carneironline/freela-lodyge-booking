@@ -1,0 +1,63 @@
+.container {
+	width: 290px;
+	height: 337px;
+	border-radius: 10px;
+	background: var(--color-beige-10);
+	padding: 28px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.title {
+		font-family: Gilroy;
+		font-size: 16px;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		list-style-position: inside;
+		padding-left: 14px;
+		padding-right: 14px;
+		margin-top: 30px;
+
+		.item {
+			font-size: 14px;
+			padding-top: 10px;
+
+			& + .item {
+				border-top: 1px solid #0000001a;
+			}
+
+			&::marker {
+				font-size: 0.5em;
+			}
+
+			.name {
+				margin-left: -4px;
+			}
+
+			.value {
+				padding-left: 5px;
+			}
+		}
+	}
+
+	.btnGo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 260px;
+		height: 40px;
+		background: var(--color-orange);
+		color: var(--color-white);
+		font-size: 14px;
+		font-weight: 700;
+		cursor: pointer;
+		border-radius: var(--button-border-radius);
+		margin-top: 30px;
+	}
+}

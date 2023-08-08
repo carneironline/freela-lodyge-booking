@@ -9,7 +9,7 @@
 	width: 290px;
 	height: 40px;
 	background: #f1f1f1;
-	border-radius: 20px;
+	border-radius: var(--button-border-radius);
 	display: flex;
 	align-items: center;
 	gap: 10px;
