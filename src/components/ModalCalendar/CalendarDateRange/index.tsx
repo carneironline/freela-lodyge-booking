@@ -10,7 +10,8 @@ import "react-date-range/dist/styles.css";
 import "./CalendarDateRange.css";
 
 export function CalendarDateRange() {
-	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
+	const { selectedDates, handleSelectDays, checkin } =
+		useContext(CalendarContext);
 	const dateToday = new Date();
 	const initialRanges = {
 		startDate: selectedDates.startDate?.date || dateToday,

@@ -7,10 +7,10 @@ import { useContext } from "react";
 import styles from "./BookingButtons.module.scss";
 
 export function BookingButtons() {
-	const { setIsModalOpen } = useContext(CalendarContext);
+	const { handleOpenModal } = useContext(CalendarContext);
 
 	function handleOpenModalCalendar() {
-		setIsModalOpen(true);
+		handleOpenModal();
 	}
 
 	return (

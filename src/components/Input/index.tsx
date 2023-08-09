@@ -4,9 +4,11 @@ import classNames from "classnames";
 
 interface InputProps {
 	type?: HTMLInputTypeAttribute;
+	icon?: ElementType;
 	placeholder?: string;
 	className?: string;
-	icon?: ElementType;
+	defaultValue?: string;
+	onClick?: () => void;
 }
 
 export function Input({
