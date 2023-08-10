@@ -9,9 +9,9 @@ export function CalendarSchedule() {
 			<div className={styles.inputs}>
 				<ScheduleInputs />
 			</div>
-			<div className={styles.info}>
+			{/* <div className={styles.info}>
 				<InfoButton />
-			</div>
+			</div> */}
 		</div>
 	);
 }

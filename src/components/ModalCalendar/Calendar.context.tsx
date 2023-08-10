@@ -3,14 +3,14 @@ import {
 	getDayInfo,
 	getDifferenceInDays,
 } from "@/components/ModalCalendar/Calendar.utils";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface CalendarContextType {
 	isModalOpen: boolean;
 	selectedDates: SelectedDatesProps;
 	checkin: string;
 	checkout: string;
-	hasCompleteBookingInfo: string;
+	hasCompleteBookingInfo: boolean;
 	setIsModalOpen: (isLoading: boolean) => void;
 	handleSelectDays: (days: SelectedProps) => void;
 	handleCloseModal: () => void;
@@ -31,7 +31,7 @@ export const CalendarContext = createContext<CalendarContextType>({
 	selectedDates: initialDates,
 	checkin: "",
 	checkout: "",
-	hasCompleteBookingInfo: "",
+	hasCompleteBookingInfo: false,
 	setIsModalOpen: () => {},
 	handleSelectDays: () => {},
 	handleCloseModal: () => {},
@@ -93,6 +93,11 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 		setCheckout(item);
 	}
 
+	function clearCheckinCheckout() {
+		setCheckin("");
+		setCheckout("");
+	}
+
 	function handleOpenModal() {
 		evtToogleBodyOverflowHidden();
 		setIsModalOpen(true);
@@ -111,6 +116,7 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 
 		if (startDate === endDate) {
 			setSelectedDates({ ...initialDates, startDate: start });
+			clearCheckinCheckout();
 		} else {
 			setSelectedDates({
 				startDate: start,
@@ -119,6 +125,10 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 			});
 		}
 	}
+
+	useEffect(() => {
+		if (hasCompleteBookingInfo) handleCloseModal();
+	}, [hasCompleteBookingInfo]);
 
 	return (
 		<CalendarContext.Provider value={contextValue}>

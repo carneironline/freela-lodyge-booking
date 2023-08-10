@@ -6,15 +6,18 @@ interface InputProps {
 	type?: HTMLInputTypeAttribute;
 	icon?: ElementType;
 	placeholder?: string;
+	id?: string;
 	className?: string;
-	defaultValue?: string;
-	onClick?: () => void;
+	value?: string;
+	onFocus?: () => void;
+	onChange?: () => void;
 }
 
 export function Input({
 	type = "text",
 	className = "",
 	icon: Icon,
+	onChange = () => {},
 	...rest
 }: InputProps) {
 	const classIcon = classNames({ "has-icon": !!Icon });
@@ -23,7 +26,12 @@ export function Input({
 	return (
 		<div className={`${styles.container} ${classIcon}`}>
 			<div className={styles.icon}>{elIcon}</div>
-			<input type={type} className={`${styles.input} ${className}`} {...rest} />
+			<input
+				type={type}
+				className={`${styles.input} ${className}`}
+				onChange={onChange}
+				{...rest}
+			/>
 		</div>
 	);
 }

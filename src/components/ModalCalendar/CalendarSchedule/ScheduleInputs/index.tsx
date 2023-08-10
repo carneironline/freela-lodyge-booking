@@ -7,7 +7,8 @@ import { CalendarContext } from "@/context";
 import { useContext } from "react";
 
 export function ScheduleInputs() {
-	const { handleSetCheckin, handleSetCheckout } = useContext(CalendarContext);
+	const { handleSetCheckin, handleSetCheckout, checkin, checkout } =
+		useContext(CalendarContext);
 	const options = getHourOptions("br");
 
 	function handleChange(itemOption: OptionProps, inputId: string) {
@@ -23,6 +24,7 @@ export function ScheduleInputs() {
 			<Select
 				placeholder="Entrar"
 				id="checkin"
+				value={checkin}
 				icon={ClockThreeSVG}
 				options={options}
 				onChange={(itemOption) => handleChange(itemOption, "checkin")}
@@ -30,6 +32,7 @@ export function ScheduleInputs() {
 			<Select
 				placeholder="Sair"
 				id="checkout"
+				value={checkout}
 				icon={ClockThreeSVG}
 				options={options}
 				onChange={(itemOption) => handleChange(itemOption, "checkout")}

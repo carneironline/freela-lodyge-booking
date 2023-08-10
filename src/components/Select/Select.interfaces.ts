@@ -8,6 +8,7 @@ export interface OptionProps {
 export interface SelectProps {
 	placeholder?: string;
 	id?: string;
+	value?: string;
 	className?: string;
 	icon?: ElementType;
 	options: Array<OptionProps>;

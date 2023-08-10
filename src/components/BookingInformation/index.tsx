@@ -13,19 +13,13 @@ export function BookingInformation() {
 	const boxOrCenterText = "or";
 
 	function handleReserve() {
-		if (hasCompleteBookingInfo) {
-			console.log("Submit Reserve");
-		} else {
-			handleOpenModal();
-		}
+		hasCompleteBookingInfo ? console.log("Submit Reserve") : handleOpenModal();
 	}
 
 	function FullPrice() {
 		const price = 899;
 
-		if (!differenceInDaysText()) return null;
-
-		return (
+		return !differenceInDaysText() ? null : (
 			<>
 				<strong>{differenceInDaysText()}</strong> | R$ <strong>{price}</strong>
 			</>
