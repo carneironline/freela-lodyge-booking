@@ -13,13 +13,31 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	padding: 0 20px;
+	padding: 0 14px;
 	cursor: pointer;
+
+	.iconCalendar {
+		position: relative;
+		top: 2px;
+	}
 
 	.text {
 		font-size: 14px;
 		font-weight: 600;
 		color: #313131;
 		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		.textLabel {
+			width: 53px;
+		}
+	}
+
+	.iconArrow {
+		&:global(.is-hide) {
+			display: none;
+		}
 	}
 }

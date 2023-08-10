@@ -1,15 +1,35 @@
 "use client";
 
+import { useContext } from "react";
 import { BookingButtons } from "./BookingButtons";
 import { BookingGoNow } from "./BookingGoNow";
+import { CalendarContext } from "../ModalCalendar/Calendar.context";
 import styles from "./BookingInformation.module.scss";
 
 export function BookingInformation() {
+	const { differenceInDaysText, hasCompleteBookingInfo, handleOpenModal } =
+		useContext(CalendarContext);
 	const btnReserveLabel = "Realizar minha reserva";
 	const boxOrCenterText = "or";
 
 	function handleReserve() {
-		console.log("Reserve");
+		if (hasCompleteBookingInfo) {
+			console.log("Submit Reserve");
+		} else {
+			handleOpenModal();
+		}
+	}
+
+	function FullPrice() {
+		const price = 899;
+
+		if (!differenceInDaysText()) return null;
+
+		return (
+			<>
+				<strong>{differenceInDaysText()}</strong> | R$ <strong>{price}</strong>
+			</>
+		);
 	}
 
 	return (
@@ -17,7 +37,7 @@ export function BookingInformation() {
 			<div className={styles.top}>
 				<div className={styles.topLabel}>Full Price:</div>
 				<div className={styles.topText}>
-					R$ <strong>899</strong> /noite
+					<FullPrice />
 				</div>
 			</div>
 
