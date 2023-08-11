@@ -9,8 +9,10 @@ import styles from "./BookingInformation.module.scss";
 export function BookingInformation() {
 	const { differenceInDaysText, hasCompleteBookingInfo, handleOpenModal } =
 		useContext(CalendarContext);
-	const btnReserveLabel = "Realizar minha reserva";
-	const boxOrCenterText = "or";
+	const btnReserveLabel = hasCompleteBookingInfo
+		? "Realizar minha reserva"
+		: "Ver disponibilidade";
+	const boxOrCenterText = "ou";
 
 	function handleReserve() {
 		hasCompleteBookingInfo ? console.log("Submit Reserve") : handleOpenModal();

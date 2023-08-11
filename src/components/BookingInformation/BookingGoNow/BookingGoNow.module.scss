@@ -1,3 +1,5 @@
+@import "@/styles/mixins.scss";
+
 .container {
 	width: 290px;
 	height: 337px;
@@ -48,17 +50,8 @@
 	}
 
 	.btnGo {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include btnOrange;
 		width: 260px;
-		height: 40px;
-		background: var(--color-orange);
-		color: var(--color-white);
-		font-size: 14px;
-		font-weight: 700;
-		cursor: pointer;
-		border-radius: var(--button-border-radius);
 		margin-top: 30px;
 	}
 }

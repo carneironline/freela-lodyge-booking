@@ -1,3 +1,21 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 167px;
+	height: 40px;
+	background: var(--color-white);
+	box-shadow: 0px -1px 0px 0px #00000026 inset;
+	border-radius: var(--button-border-radius);
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--color-blue-50);
+	margin: 0 auto;
+	margin-top: 30px;
+	cursor: pointer;
+	border: 1px solid #048abf;
+}
+
 .calendar-wrap {
 	position: relative;
 	padding: 20px 0;
@@ -122,17 +140,28 @@
 .rdrWeekDays {
 	padding: 0 0.833em;
 }
+@media screen and (max-width: 767px) {
+	.rdrWeekDays {
+		margin-bottom: 16px;
+	}
+}
 
 .rdrMonth {
 	padding: 0;
 	margin: 0 auto;
 }
-
-.rdrMonth:nth-child(1) {
-	padding-right: 35px;
+@media screen and (max-width: 767px) {
+	.rdrMonth + .rdrMonth {
+		margin-top: 30px;
+	}
 }
-.rdrMonth:nth-child(2) {
-	padding-left: 35px;
+@media screen and (min-width: 768px) {
+	.rdrMonth:nth-child(1) {
+		padding-right: 35px;
+	}
+	.rdrMonth:nth-child(2) {
+		padding-left: 35px;
+	}
 }
 
 .rdrMonth .rdrWeekDays {
@@ -239,11 +268,9 @@
 	border-top-left-radius: 1.042em;
 	border-bottom-left-radius: 1.042em;
 	background-color: currentColor;
-	left: 2px;
+	/* left: 2px; */
 }
-
-.rdrStartEdge::after,
-.rdrEndEdge::after {
+.rdrStartEdge::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -251,8 +278,23 @@
 	right: 0;
 	bottom: 0;
 	border-radius: 50%;
+	background: white;
+	width: 60%;
+	height: 100%;
+}
+
+.rdrStartEdge::after,
+.rdrEndEdge::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;
 	background: #d3c2a6;
-	width: 100%;
+	width: 60%;
 	height: 100%;
 }
 
@@ -260,6 +302,17 @@
 	border-top-right-radius: 1.042em;
 	border-bottom-right-radius: 1.042em;
 	right: 2px;
+}
+.rdrEndEdge::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;
+	background: white;
+	width: 60%;
+	height: 100%;
 }
 
 .rdrSelected {

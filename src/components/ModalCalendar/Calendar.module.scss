@@ -1,3 +1,6 @@
+@import "@/styles/breakpoints";
+@import '@/styles/mixins.scss';
+
 .container {
 	position: fixed;
 	top: 20%;
@@ -5,15 +8,64 @@
 	background-color: #fff;
 	width: 702px;
 	padding: 0 30px;
-	height: 594.0001220703125px;
+	height: 460px;
 	z-index: 9;
 
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+	display: grid;
+	grid-template-areas:
+		"top"
+		"daterange"
+		"schedule";
+	grid-template-columns: 100% 100% 100%;
+	grid-template-rows: 105px 1fr 90px;
+	align-items: flex-start;
+
+	@media #{$BREAKPOINT-MOBILE-LAND} {
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		grid-template-areas:
+			"top"
+			"daterange"
+			"BtnGoToSchedule";
+
+		&:global(.show-schedule) {
+			grid-template-areas:
+				"top"
+				"schedule"
+				"schedule";
+
+			.daterange {
+				display: none;
+			}
+			.schedule {
+				display: block;
+			}
+		}
+	}
+
+	.top {
+		grid-area: top;
+	}
+	.daterange {
+		grid-area: daterange;
+		justify-self: start;
+		max-height: 580px;
+		overflow: auto;
+	}
+	.schedule {
+		grid-area: schedule;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		padding-top: 22px;
+
+		@media #{$BREAKPOINT-MOBILE-LAND} {
+			display: none;
+		}
+	}
 }
 
 .btnClose {
@@ -21,4 +73,15 @@
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
+}
+
+.BtnGoToSchedule {
+	grid-area: BtnGoToSchedule;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding-top: 22px;
+
+	.BtnGoTo {
+		@include btnPrimary;
+		margin: 0 auto;
+	}
 }

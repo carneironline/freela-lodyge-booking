@@ -8,10 +8,11 @@ import { CalendarContext } from "@/context";
 
 import "react-date-range/dist/styles.css";
 import "./CalendarDateRange.css";
+import { isSM } from "@/utils/breakpoint";
 
 export function CalendarDateRange() {
-	const { selectedDates, handleSelectDays, checkin } =
-		useContext(CalendarContext);
+	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
+	const [showMonths, setShowMonths] = useState(2);
 	const dateToday = new Date();
 	const initialRanges = {
 		startDate: selectedDates.startDate?.date || dateToday,
@@ -21,9 +22,41 @@ export function CalendarDateRange() {
 	};
 	const [state, setState] = useState([initialRanges]);
 
+	const config = {
+		ranges: state,
+		minDate: dateToday,
+		locale: locales["pt"],
+		direction: isSM() ? "vertical" : "horizontal",
+		scroll: isSM() ? { calendarHeight: 240 } : {},
+		weekStartsOn: 0,
+		months: showMonths,
+		showMonthArrow: isSM() ? false : true,
+		showPreview: false,
+		showSelectionPreview: false,
+		showMonthAndYearPickers: false,
+		moveRangeOnFirstSelection: false,
+		preventSnapRefocus: true,
+	};
+
 	function handleSelect(item: DateRangeSelectedProps) {
 		setState([item.selection]);
 		handleSelectDays(item.selection);
+	}
+
+	function Button() {
+		const buttonLabel = "Mais datas";
+
+		function handleClick() {
+			setShowMonths(showMonths + 2);
+		}
+
+		if (!isSM()) return null;
+
+		return (
+			<button className="button" onClick={handleClick}>
+				{buttonLabel}
+			</button>
+		);
 	}
 
 	useEffect(() => {
@@ -32,19 +65,9 @@ export function CalendarDateRange() {
 
 	return (
 		<div className="calendar-wrap">
-			<DateRange
-				minDate={dateToday}
-				showPreview={false}
-				showMonthAndYearPickers={false}
-				showSelectionPreview={false}
-				moveRangeOnFirstSelection={false}
-				months={2}
-				ranges={state}
-				direction="horizontal"
-				locale={locales["pt"]}
-				weekStartsOn={0}
-				onChange={handleSelect}
-			/>
+			<DateRange onChange={handleSelect} {...config} />
+
+			<Button />
 		</div>
 	);
 }

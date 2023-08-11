@@ -1,3 +1,5 @@
+@import "@/styles/mixins.scss";
+
 .container {
 	position: sticky;
 	top: 30px;
@@ -28,19 +30,9 @@
 }
 
 .btnReserve {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include btnPrimary;
 	width: 290px;
-	height: 40px;
-	background: #048abf;
-	box-shadow: 0px -1px 0px 0px #00000026 inset;
-	border-radius: var(--button-border-radius);
-	font-size: 14px;
-	font-weight: 700;
-	color: var(--color-white);
 	margin-top: 30px;
-	cursor: pointer;
 }
 
 .boxOr {

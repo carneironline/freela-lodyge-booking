@@ -6,9 +6,8 @@ export function CalendarSchedule() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>Horários</div>
-			<div className={styles.inputs}>
-				<ScheduleInputs />
-			</div>
+
+			<ScheduleInputs />
 			{/* <div className={styles.info}>
 				<InfoButton />
 			</div> */}
