@@ -1,35 +1,36 @@
-@import '@/styles/_breakpoints';
+@import "@/styles/_breakpoints";
 
 .searchBar {
-    width: 100%;
-    background-color: var(--color-white);
-    border-radius: 10px;
-    padding: var(--space-2-5x) var(--space-3x);
+	width: 100%;
+	background-color: var(--color-white);
+	border-radius: 10px;
+	padding: var(--space-2-5x) var(--space-3x);
 
-    @media #{$BREAKPOINT-TABLET-LAND} {
-        max-width: 810px;
-        border-radius: 100px;
-        padding: var(--space-1x);
-    }
+	@media #{$BREAKPOINT-TABLET-LAND} {
+		max-width: 850px;
+		border-radius: 100px;
+		padding: var(--space-1x);
+	}
 }
 
-.searchBar, .inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.searchBar,
+.inputs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-    @media #{$BREAKPOINT-TABLET-LAND} {
-        flex-direction: row;
-    }
+	@media #{$BREAKPOINT-TABLET-LAND} {
+		flex-direction: row;
+	}
 }
 
 .inputs {
-    width: 100%;
-    margin-bottom: var(--space-2-5x);
-    gap: var(--space-1-5x);
+	width: 100%;
+	margin-bottom: var(--space-2-5x);
+	gap: var(--space-1-5x);
 
-    @media #{$BREAKPOINT-DESK} {
-        margin-bottom: 0;
-        margin-right: var(--space-1-5x);
-    }
+	@media #{$BREAKPOINT-DESK} {
+		margin-bottom: 0;
+		margin-right: var(--space-1-5x);
+	}
 }

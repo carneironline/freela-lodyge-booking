@@ -9,17 +9,11 @@ import { CalendarContext } from "@/context";
 import "react-date-range/dist/styles.css";
 import "./CalendarDateRange.css";
 import { isSM } from "@/utils/breakpoint";
+import { initialRanges, dateToday } from "../Calendar.utils";
 
 export function CalendarDateRange() {
 	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
 	const [showMonths, setShowMonths] = useState(2);
-	const dateToday = new Date();
-	const initialRanges = {
-		startDate: selectedDates.startDate?.date || dateToday,
-		endDate: selectedDates.endDate?.date || addDays(dateToday, 2),
-		key: "selection",
-		color: "rgba(233, 224, 209, 0.39)",
-	};
 
 	let ranges = null;
 
@@ -73,12 +67,11 @@ export function CalendarDateRange() {
 		handleSelectDays(initialRanges);
 	}, []);
 
-	if (ranges)
-		return (
-			<div className="calendar-wrap">
-				<DateRange onChange={handleSelect} {...configDateRange} />
+	return !ranges ? null : (
+		<div className="calendar-wrap">
+			<DateRange onChange={handleSelect} {...configDateRange} />
 
-				<Button />
-			</div>
-		);
+			<Button />
+		</div>
+	);
 }

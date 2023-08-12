@@ -7,6 +7,7 @@ import {
 	PlayerModalProvider,
 	CalendarProvider,
 } from "@/context";
+import { ModalCalendar } from "@/components/ModalCalendar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
 					<LocaleProvider>
 						<CalendarProvider>
 							<TagsControlProvider>
+								<ModalCalendar />
 								<PlayerModalProvider>{children}</PlayerModalProvider>
 							</TagsControlProvider>
 						</CalendarProvider>

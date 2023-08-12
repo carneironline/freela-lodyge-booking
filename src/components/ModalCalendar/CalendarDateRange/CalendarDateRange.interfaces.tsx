@@ -10,6 +10,7 @@ interface DateInfoProps {
 	day: number;
 	month: number;
 	monthName: string;
+	year: number;
 	fullDate: string;
 }
 

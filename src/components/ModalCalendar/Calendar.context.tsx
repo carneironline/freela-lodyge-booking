@@ -1,5 +1,6 @@
 "use client";
 import {
+	initialRanges,
 	getDayInfo,
 	getDifferenceInDays,
 } from "@/components/ModalCalendar/Calendar.utils";
@@ -127,6 +128,8 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 	}
 
 	useEffect(() => {
+		handleSelectDays(initialRanges);
+
 		if (hasCompleteBookingInfo) handleCloseModal();
 	}, [hasCompleteBookingInfo]);
 

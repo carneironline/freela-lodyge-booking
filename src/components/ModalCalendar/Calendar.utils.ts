@@ -3,6 +3,7 @@ import {
 	format,
 	getDate,
 	getMonth,
+	getYear,
 	differenceInDays,
 	addDays,
 	subDays,
@@ -13,20 +14,30 @@ import { ptBR } from "date-fns/locale";
 
 export const dateToday = new Date();
 export const nextWeekenDays = getNextWeekenDays();
+export const initialRanges = {
+	startDate: dateToday,
+	endDate: addDays(dateToday, 2),
+	key: "selection",
+	color: "rgba(233, 224, 209, 0.39)",
+};
 
 export function getDayInfo(dateItem: Date) {
 	const date = dateItem;
-	const day = getDate(dateItem);
-	const month = getMonth(dateItem) + 1;
-	const monthName = format(dateItem, "LLLL", { locale: ptBR });
+	const day = getDate(date);
+	const month = getMonth(date) + 1;
+	const monthName = format(date, "LLLL", { locale: ptBR });
+	const year = getYear(date);
 	const fullDate = `${day} de ${monthName}`;
+	const fullDateWithYear = `${day} de ${monthName} de ${year}`;
 
 	return {
 		date,
 		day,
 		month,
 		monthName,
+		year,
 		fullDate,
+		fullDateWithYear,
 	};
 }
 

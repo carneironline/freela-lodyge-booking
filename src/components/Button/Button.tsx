@@ -1,24 +1,24 @@
-import { ReactNode } from 'react';
-import styles from './button.module.scss'
+import { ReactNode } from "react";
+import styles from "./button.module.scss";
 import clsx from "classnames";
 
-type ButtonType = {
-    children: ReactNode;
-    type: string;
-    className?: string;
-};
-
-const Button = ({ children, className, type }: ButtonType) => {
-    return (
-        <button 
-        className={clsx({
-            [styles.buttonContainer]: true,
-            [styles.buttonContainer]: true,
-            ...(className && { [className]: true }),
-        })}>
-            { children }
-        </button>
-    )
+interface ButtonType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	children: ReactNode;
+	className?: string;
 }
+
+const Button = ({ children, className, ...rest }: ButtonType) => {
+	return (
+		<button
+			className={clsx({
+				[styles.buttonContainer]: true,
+				...(className && { [className]: true }),
+			})}
+			{...rest}
+		>
+			{children}
+		</button>
+	);
+};
 
 export default Button;
