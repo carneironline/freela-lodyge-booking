@@ -21,7 +21,7 @@ export const initialRanges = {
 	color: "rgba(233, 224, 209, 0.39)",
 };
 
-export function getDayInfo(dateItem: Date) {
+export function getDayInfo(dateItem: Date = initialRanges.startDate) {
 	const date = dateItem;
 	const day = getDate(date);
 	const month = getMonth(date) + 1;
@@ -41,7 +41,10 @@ export function getDayInfo(dateItem: Date) {
 	};
 }
 
-export function getDifferenceInDays(endDate: Date, startDate: Date) {
+export function getDifferenceInDays(
+	endDate: Date = initialRanges.startDate,
+	startDate: Date = initialRanges.endDate
+) {
 	return differenceInDays(endDate, startDate);
 }
 

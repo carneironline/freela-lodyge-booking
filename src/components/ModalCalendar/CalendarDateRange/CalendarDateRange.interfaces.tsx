@@ -1,11 +1,11 @@
-interface SelectedProps {
-	startDate: Date;
-	endDate: Date;
+export interface SelectedProps {
+	startDate?: Date | undefined;
+	endDate?: Date | undefined;
 	key?: string;
 	color?: string;
 }
 
-interface DateInfoProps {
+export interface DateInfoProps {
 	date: Date;
 	day: number;
 	month: number;
@@ -14,16 +14,16 @@ interface DateInfoProps {
 	fullDate: string;
 }
 
-interface SelectedDatesProps {
+export interface SelectedDatesProps {
 	startDate: DateInfoProps | null;
 	endDate: DateInfoProps | null;
 	differenceInDays?: number;
 }
 
-interface DateRangeSelectedProps {
+export interface DateRangeSelectedProps {
 	selection: SelectedProps;
 }
 
-interface CalendarDateRangeProps {
+export interface CalendarDateRangeProps {
 	onChange?: (item: SelectedProps) => void;
 }

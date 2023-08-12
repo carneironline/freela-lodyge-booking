@@ -5,6 +5,10 @@ import {
 	getDifferenceInDays,
 } from "@/components/ModalCalendar/Calendar.utils";
 import { createContext, useEffect, useState } from "react";
+import {
+	SelectedDatesProps,
+	SelectedProps,
+} from "./CalendarDateRange/CalendarDateRange.interfaces";
 
 interface CalendarContextType {
 	isModalOpen: boolean;
@@ -109,7 +113,7 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 		setIsModalOpen(false);
 	}
 
-	function handleSelectDays(days: SelectedProps) {
+	function handleSelectDays(days: SelectedProps): void {
 		const { startDate, endDate } = days;
 
 		const start = getDayInfo(startDate);

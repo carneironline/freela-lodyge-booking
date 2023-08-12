@@ -1,8 +1,7 @@
 "use client";
 
-import { DateRange } from "react-date-range";
+import { DateRange, Range, RangeKeyDict } from "react-date-range";
 import * as locales from "react-date-range/dist/locale";
-import { addDays } from "date-fns";
 import { useContext, useEffect, useState } from "react";
 import { CalendarContext } from "@/context";
 
@@ -41,10 +40,11 @@ export function CalendarDateRange() {
 		showMonthAndYearPickers: false,
 		moveRangeOnFirstSelection: false,
 		preventSnapRefocus: true,
+		onChange: (item: RangeKeyDict): void => handleSelect(item.selection),
 	};
 
-	function handleSelect(item: DateRangeSelectedProps) {
-		handleSelectDays(item.selection);
+	function handleSelect(item: Range): void {
+		handleSelectDays(item);
 	}
 
 	function Button() {
@@ -69,7 +69,7 @@ export function CalendarDateRange() {
 
 	return !ranges ? null : (
 		<div className="calendar-wrap">
-			<DateRange onChange={handleSelect} {...configDateRange} />
+			<DateRange {...configDateRange} />
 
 			<Button />
 		</div>
