@@ -20,10 +20,21 @@ export function CalendarDateRange() {
 		key: "selection",
 		color: "rgba(233, 224, 209, 0.39)",
 	};
-	const [state, setState] = useState([initialRanges]);
 
-	const config = {
-		ranges: state,
+	let ranges = null;
+
+	if (selectedDates?.startDate) {
+		ranges = [
+			{
+				...initialRanges,
+				startDate: selectedDates.startDate?.date,
+				endDate: selectedDates.endDate?.date,
+			},
+		];
+	}
+
+	const configDateRange = {
+		ranges,
 		minDate: dateToday,
 		locale: locales["pt"],
 		direction: isSM() ? "vertical" : "horizontal",
@@ -39,7 +50,6 @@ export function CalendarDateRange() {
 	};
 
 	function handleSelect(item: DateRangeSelectedProps) {
-		setState([item.selection]);
 		handleSelectDays(item.selection);
 	}
 
@@ -63,11 +73,12 @@ export function CalendarDateRange() {
 		handleSelectDays(initialRanges);
 	}, []);
 
-	return (
-		<div className="calendar-wrap">
-			<DateRange onChange={handleSelect} {...config} />
+	if (ranges)
+		return (
+			<div className="calendar-wrap">
+				<DateRange onChange={handleSelect} {...configDateRange} />
 
-			<Button />
-		</div>
-	);
+				<Button />
+			</div>
+		);
 }

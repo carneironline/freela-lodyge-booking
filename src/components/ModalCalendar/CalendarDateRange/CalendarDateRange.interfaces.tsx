@@ -1,8 +1,8 @@
 interface SelectedProps {
 	startDate: Date;
 	endDate: Date;
-	key: string;
-	color: string;
+	key?: string;
+	color?: string;
 }
 
 interface DateInfoProps {
@@ -16,7 +16,7 @@ interface DateInfoProps {
 interface SelectedDatesProps {
 	startDate: DateInfoProps | null;
 	endDate: DateInfoProps | null;
-	differenceInDays: number;
+	differenceInDays?: number;
 }
 
 interface DateRangeSelectedProps {

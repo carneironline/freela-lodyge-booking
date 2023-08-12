@@ -1,7 +1,8 @@
 .container {
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 	width: 100%;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding-bottom: 22px;

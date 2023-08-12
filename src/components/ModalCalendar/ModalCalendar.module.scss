@@ -1,5 +1,5 @@
 @import "@/styles/breakpoints";
-@import '@/styles/mixins.scss';
+@import "@/styles/mixins.scss";
 
 .container {
 	position: fixed;
@@ -8,7 +8,7 @@
 	background-color: #fff;
 	width: 702px;
 	padding: 0 30px;
-	height: 460px;
+	height: 510px;
 	z-index: 9;
 
 	border-radius: 10px;
@@ -20,7 +20,7 @@
 		"daterange"
 		"schedule";
 	grid-template-columns: 100% 100% 100%;
-	grid-template-rows: 105px 1fr 90px;
+	grid-template-rows: 155px 1fr 90px;
 	align-items: flex-start;
 
 	@media #{$BREAKPOINT-MOBILE-LAND} {

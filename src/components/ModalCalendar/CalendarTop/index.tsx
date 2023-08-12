@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CalendarContext } from "@/context";
+import { CalendarTags } from "./CalendarTags";
 import styles from "./CalendarTop.module.scss";
 
 export function CalendarTop() {
@@ -25,7 +26,7 @@ export function CalendarTop() {
 				</div>
 			</div>
 
-			<div className={styles.tags}></div>
+			<CalendarTags />
 		</div>
 	);
 }
