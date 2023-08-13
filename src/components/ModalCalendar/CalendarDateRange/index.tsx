@@ -8,23 +8,12 @@ import { CalendarContext } from "@/context";
 import "react-date-range/dist/styles.css";
 import "./CalendarDateRange.css";
 import { isSM } from "@/utils/breakpoint";
-import { initialRanges, dateToday } from "../Calendar.utils";
+import { initialRanges, dateToday, getRanges } from "../Calendar.utils";
 
 export function CalendarDateRange() {
 	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
 	const [showMonths, setShowMonths] = useState(2);
-
-	let ranges = null;
-
-	if (selectedDates?.startDate) {
-		ranges = [
-			{
-				...initialRanges,
-				startDate: selectedDates.startDate?.date,
-				endDate: selectedDates.endDate?.date,
-			},
-		];
-	}
+	const ranges = getRanges(selectedDates);
 
 	const configDateRange = {
 		ranges,
@@ -64,7 +53,7 @@ export function CalendarDateRange() {
 	}
 
 	useEffect(() => {
-		handleSelectDays(initialRanges);
+		handleSelectDays(initialRanges());
 	}, []);
 
 	return !ranges ? null : (
