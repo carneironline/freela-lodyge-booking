@@ -29,6 +29,10 @@ export function setCalendarStorage(obj: object) {
 	);
 }
 
+export function removeCalendarStorage() {
+	localStorage.removeItem(calendarStorageName);
+}
+
 export const dateToday = new Date();
 export const nextWeekenDays = getNextWeekenDays();
 export function initialDates() {
