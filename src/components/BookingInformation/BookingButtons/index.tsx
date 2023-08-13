@@ -15,6 +15,7 @@ export function BookingButtons() {
 		checkout,
 		hasCompleteBookingInfo,
 	} = useContext(CalendarContext);
+
 	const checkinLabel = hasCompleteBookingInfo ? "Entrada" : "Entrar";
 	const checkinTextDatetime =
 		hasCompleteBookingInfo &&
@@ -24,7 +25,6 @@ export function BookingButtons() {
 		hasCompleteBookingInfo &&
 		`${selectedDates.endDate?.fullDate} - ${checkout}`;
 	const classIsHide = classNames({ "is-hide": hasCompleteBookingInfo });
-
 	function handleOpenModalCalendar() {
 		handleOpenModal();
 	}

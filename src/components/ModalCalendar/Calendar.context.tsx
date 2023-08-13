@@ -3,6 +3,8 @@ import {
 	initialRanges,
 	getDayInfo,
 	getDifferenceInDays,
+	setCalendarStorage,
+	calendarStorage,
 } from "@/components/ModalCalendar/Calendar.utils";
 import { createContext, useEffect, useState } from "react";
 import {
@@ -46,11 +48,15 @@ export const CalendarContext = createContext<CalendarContextType>({
 	differenceInDaysText: () => "",
 });
 
-function evtToogleBodyOverflowHidden() {
+function evtToogleBodyOverflowHidden(isActive = false) {
 	const elBody = document.querySelector("body");
+	const classHidden = "is-overflow-hidden";
 
-	if (elBody) {
-		elBody.classList.toggle("is-overflow-hidden");
+	if (elBody && isActive) {
+		elBody.classList.add(classHidden);
+	}
+	if (elBody && !isActive) {
+		elBody.classList.remove(classHidden);
 	}
 }
 
@@ -58,13 +64,14 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedDates, setSelectedDates] =
 		useState<SelectedDatesProps>(initialDates);
-	const [checkin, setCheckin] = useState("");
-	const [checkout, setCheckout] = useState("");
+	const [checkin, setCheckin] = useState(calendarStorage().checkin || "");
+	const [checkout, setCheckout] = useState(calendarStorage().checkout || "");
+
 	const hasCompleteBookingInfo =
 		!!checkin &&
 		!!checkout &&
-		!!selectedDates.startDate?.fullDate &&
-		!!selectedDates.endDate?.fullDate;
+		!!calendarStorage().startDate?.fullDate &&
+		!!calendarStorage().endDate?.fullDate;
 
 	const contextValue = {
 		isModalOpen,
@@ -104,7 +111,7 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 	}
 
 	function handleOpenModal() {
-		evtToogleBodyOverflowHidden();
+		evtToogleBodyOverflowHidden(true);
 		setIsModalOpen(true);
 	}
 
@@ -115,26 +122,35 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 
 	function handleSelectDays(days: SelectedProps): void {
 		const { startDate, endDate } = days;
-
 		const start = getDayInfo(startDate);
 		const end = getDayInfo(endDate);
+		let dates = null;
 
 		if (startDate === endDate) {
-			setSelectedDates({ ...initialDates, startDate: start });
+			dates = { ...initialDates, startDate: start };
 			clearCheckinCheckout();
 		} else {
-			setSelectedDates({
+			dates = {
 				startDate: start,
 				endDate: end,
 				differenceInDays: getDifferenceInDays(endDate, startDate),
-			});
+			};
+
+			setCalendarStorage({ ...dates });
 		}
+
+		setSelectedDates(dates);
 	}
 
 	useEffect(() => {
-		handleSelectDays(initialRanges);
+		handleSelectDays(initialRanges());
+	}, []);
 
-		if (hasCompleteBookingInfo) handleCloseModal();
+	useEffect(() => {
+		if (hasCompleteBookingInfo) {
+			setCalendarStorage({ ...calendarStorage(), checkin, checkout });
+			handleCloseModal();
+		}
 	}, [hasCompleteBookingInfo]);
 
 	return (
