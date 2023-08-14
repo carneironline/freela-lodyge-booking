@@ -5,6 +5,8 @@
 	background-color: var(--color-white);
 	border-radius: 10px;
 	padding: var(--space-2-5x) var(--space-3x);
+	gap: 10px;
+	margin: 0 auto;
 
 	@media #{$BREAKPOINT-TABLET-LAND} {
 		max-width: 850px;
@@ -26,7 +28,6 @@
 
 .inputs {
 	width: 100%;
-	margin-bottom: var(--space-2-5x);
 	gap: var(--space-1-5x);
 
 	@media #{$BREAKPOINT-DESK} {
