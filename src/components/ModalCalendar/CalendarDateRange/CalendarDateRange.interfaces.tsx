@@ -1,3 +1,5 @@
+import { CalendarProps, RangeKeyDict } from "react-date-range";
+
 export interface SelectedProps {
 	startDate?: Date | undefined;
 	endDate?: Date | undefined;
@@ -25,5 +27,10 @@ export interface DateRangeSelectedProps {
 }
 
 export interface CalendarDateRangeProps {
+	direction?: "vertical" | "horizontal" | undefined;
 	onChange?: (item: SelectedProps) => void;
+}
+
+export interface ConfigDateRangeProps extends Omit<CalendarProps, "onChange"> {
+	onChange?: (item: DateRangeSelectedProps | RangeKeyDict) => void;
 }

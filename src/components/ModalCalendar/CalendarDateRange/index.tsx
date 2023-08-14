@@ -9,13 +9,14 @@ import "react-date-range/dist/styles.css";
 import "./CalendarDateRange.css";
 import { isSM } from "@/utils/breakpoint";
 import { initialRanges, dateToday, getRanges } from "../Calendar.utils";
+import { ConfigDateRangeProps } from "./CalendarDateRange.interfaces";
 
 export function CalendarDateRange() {
 	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
 	const [showMonths, setShowMonths] = useState(2);
 	const ranges = getRanges(selectedDates);
 
-	const configDateRange = {
+	const configDateRange: ConfigDateRangeProps = {
 		ranges,
 		minDate: dateToday,
 		locale: locales["pt"],
@@ -25,11 +26,11 @@ export function CalendarDateRange() {
 		months: showMonths,
 		showMonthArrow: isSM() ? false : true,
 		showPreview: false,
-		showSelectionPreview: false,
 		showMonthAndYearPickers: false,
-		moveRangeOnFirstSelection: false,
 		preventSnapRefocus: true,
-		onChange: (item: RangeKeyDict): void => handleSelect(item.selection),
+		onChange: (item): void => {
+			handleSelect(item.selection);
+		},
 	};
 
 	function handleSelect(item: Range): void {

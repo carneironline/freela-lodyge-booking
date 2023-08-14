@@ -120,6 +120,6 @@ export function getRanges(selectedDates: SelectedDatesProps | null = null) {
 			},
 		];
 	} else {
-		return null;
+		return undefined;
 	}
 }
