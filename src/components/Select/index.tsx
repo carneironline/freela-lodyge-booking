@@ -9,6 +9,7 @@ export function Select({
 	className = "",
 	id = "",
 	value = "",
+	placeholder = "",
 	icon: Icon = null,
 	options = [],
 	onChange = () => {},
@@ -57,7 +58,7 @@ export function Select({
 	return (
 		<div className={`${styles.container} ${classList} `}>
 			<div className={`${styles.input} `} onClick={handleOpenOptions}>
-				<div className={`${styles.inputLabel} `}>Entrar</div>
+				<div className={`${styles.inputLabel} `}>{placeholder}</div>
 				<div className={`${styles.inputValue} `}>{stateValue}</div>
 				<div className={`${styles.inputIcon} `}>{Icon && <Icon />}</div>
 			</div>
