@@ -8,8 +8,8 @@
 	transform: translate(-50%, -50%);
 	background-color: #fff;
 	width: 722px;
-	padding: 0 30px;
 	height: 510px;
+	padding: 30px;
 	z-index: 9;
 
 	border-radius: 10px;
@@ -21,7 +21,6 @@
 		"daterange"
 		"schedule";
 	grid-template-columns: 100% 100% 100%;
-	grid-template-rows: 155px 1fr 90px;
 	align-items: flex-start;
 
 	@media #{$BREAKPOINT-MOBILE-LAND} {
@@ -30,10 +29,10 @@
 		transform: unset;
 		width: 100vw;
 		height: 100vh;
-		grid-template-areas:
-			"top"
-			"daterange"
-			"BtnGoToSchedule";
+		overflow: hidden;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
 
 		&:global(.show-schedule) {
 			grid-template-areas:
@@ -81,6 +80,11 @@
 	grid-area: BtnGoToSchedule;
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	padding-top: 22px;
+
+	@media #{$BREAKPOINT-MOBILE-LAND} {
+		width: 100%;
+		min-height: 110px;
+	}
 
 	.BtnGoTo {
 		@include btnPrimary;

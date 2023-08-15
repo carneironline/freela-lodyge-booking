@@ -10,6 +10,7 @@
 	@media #{$BREAKPOINT-MOBILE-LAND} {
 		flex-direction: column;
 		align-items: flex-start;
+		padding-bottom: 30px;
 	}
 }
 

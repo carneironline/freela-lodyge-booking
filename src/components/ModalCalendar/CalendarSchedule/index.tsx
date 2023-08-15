@@ -1,4 +1,3 @@
-import { InfoButton } from "./InfoButton";
 import { ScheduleInputs } from "./ScheduleInputs";
 import styles from "./CalendarSchedule.module.scss";
 
