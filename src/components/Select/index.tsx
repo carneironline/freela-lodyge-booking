@@ -39,11 +39,7 @@ export function Select({
 		const rect = element?.getBoundingClientRect() || { top: 0 };
 		const position = element ? rect?.top + element?.clientHeight : 0;
 
-		if (position < viewportHeight) {
-			return true;
-		} else {
-			return false;
-		}
+		return position < viewportHeight ? true : false;
 	}
 
 	useEffect(() => {
