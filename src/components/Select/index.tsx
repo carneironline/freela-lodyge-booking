@@ -3,12 +3,13 @@ import classNames from "classnames";
 import { Input } from "../Input";
 import styles from "./Select.module.scss";
 import { OptionProps, SelectProps } from "./Select.interfaces";
+import { isSM } from "@/utils/breakpoint";
 
 export function Select({
 	className = "",
 	id = "",
 	value = "",
-	icon: Icon,
+	icon: Icon = null,
 	options = [],
 	onChange = () => {},
 	...rest
@@ -22,9 +23,12 @@ export function Select({
 		setShowOptions(true);
 	}
 
-	function handleSelectItem(item: OptionProps) {
-		setStateValue(item.name);
-		onChange(item);
+	function handleSelectItem(
+		item: OptionProps | React.ChangeEvent<HTMLSelectElement>
+	) {
+		const data = item.target?.value ? JSON.parse(item.target.value) : item;
+		setStateValue(data.name);
+		onChange(data);
 		setShowOptions(false);
 	}
 
@@ -52,25 +56,38 @@ export function Select({
 
 	return (
 		<div className={`${styles.container} ${classList} `}>
-			<Input
-				id={id}
-				icon={Icon}
-				value={stateValue}
-				{...rest}
-				onFocus={handleOpenOptions}
-			/>
-
-			<div id={listId} className={`${styles.list} `}>
-				{options.map((item) => (
-					<div
-						className={styles.item}
-						key={item.value}
-						onClick={() => handleSelectItem(item)}
-					>
-						{item.name}
-					</div>
-				))}
+			<div className={`${styles.input} `} onClick={handleOpenOptions}>
+				<div className={`${styles.inputLabel} `}>Entrar</div>
+				<div className={`${styles.inputValue} `}>{stateValue}</div>
+				<div className={`${styles.inputIcon} `}>{Icon && <Icon />}</div>
 			</div>
+
+			{isSM() && (
+				<select
+					className={`${styles.select} `}
+					onChange={(item) => handleSelectItem(item)}
+				>
+					{options.map((item) => (
+						<option value={JSON.stringify(item)} key={item.value}>
+							{item.name}
+						</option>
+					))}
+				</select>
+			)}
+
+			{!isSM() && (
+				<div id={listId} className={`${styles.list} `}>
+					{options.map((item) => (
+						<div
+							className={styles.item}
+							key={item.value}
+							onClick={() => handleSelectItem(item)}
+						>
+							{item.name}
+						</div>
+					))}
+				</div>
+			)}
 		</div>
 	);
 }

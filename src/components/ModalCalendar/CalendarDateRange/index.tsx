@@ -12,7 +12,8 @@ import { initialRanges, dateToday, getRanges } from "../Calendar.utils";
 import { ConfigDateRangeProps } from "./CalendarDateRange.interfaces";
 
 export function CalendarDateRange() {
-	const { selectedDates, handleSelectDays } = useContext(CalendarContext);
+	const { selectedDates, handleSelectDays, clearCheckinCheckout } =
+		useContext(CalendarContext);
 	const [showMonths, setShowMonths] = useState(2);
 	const ranges = getRanges(selectedDates);
 
@@ -35,6 +36,7 @@ export function CalendarDateRange() {
 
 	function handleSelect(item: Range): void {
 		handleSelectDays(item);
+		clearCheckinCheckout();
 	}
 
 	function Button() {

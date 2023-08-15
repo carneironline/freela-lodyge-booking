@@ -25,6 +25,7 @@ interface CalendarContextType {
 	handleSetCheckin: (item: string) => void;
 	handleSetCheckout: (item: string) => void;
 	differenceInDaysText: () => string;
+	clearCheckinCheckout: () => void;
 }
 
 interface CalendarProviderProps {
@@ -45,6 +46,7 @@ export const CalendarContext = createContext<CalendarContextType>({
 	handleOpenModal: () => {},
 	handleSetCheckin: () => {},
 	handleSetCheckout: () => {},
+	clearCheckinCheckout: () => {},
 	differenceInDaysText: () => "",
 });
 
@@ -86,6 +88,7 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 		handleSetCheckout,
 		hasCompleteBookingInfo,
 		differenceInDaysText,
+		clearCheckinCheckout,
 	};
 
 	function differenceInDaysText() {
@@ -128,7 +131,6 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 
 		if (startDate === endDate) {
 			dates = { ...initialDates, startDate: start };
-			clearCheckinCheckout();
 		} else {
 			dates = {
 				startDate: start,
@@ -142,16 +144,20 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 		setSelectedDates(dates);
 	}
 
+	function checkHasCompleteBookingInfo() {
+		if (hasCompleteBookingInfo) {
+			setCalendarStorage({ ...calendarStorage(), checkin, checkout });
+			handleCloseModal();
+		}
+	}
+
 	useEffect(() => {
 		handleSelectDays(initialRanges());
 	}, []);
 
 	useEffect(() => {
-		if (hasCompleteBookingInfo) {
-			setCalendarStorage({ ...calendarStorage(), checkin, checkout });
-			handleCloseModal();
-		}
-	}, [hasCompleteBookingInfo]);
+		checkHasCompleteBookingInfo();
+	}, [hasCompleteBookingInfo, checkin, checkout]);
 
 	return (
 		<CalendarContext.Provider value={contextValue}>

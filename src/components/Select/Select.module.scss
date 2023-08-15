@@ -5,10 +5,30 @@
 		visibility: visible;
 	}
 
+	.input {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		width: 178px;
+		height: 40px;
+		padding: 0 12px;
+		border-radius: 5px;
+		border: 1px solid #0000001a;
+		box-shadow: 0px 4px 4px 0px #0000000d;
+		font-family: Gilroy;
+		font-size: 12px;
+		cursor: pointer;
+
+		.inputLabel {
+			font-weight: 700;
+			width: 100%;
+		}
+	}
+
 	.list {
 		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 84%;
+		transform: translateX(-84%);
 		max-height: 170px;
 		background: white;
 		box-shadow: 0px 4px 4px 0px #0000000d;
@@ -48,4 +68,13 @@
 			}
 		}
 	}
+}
+
+.select {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
 }

@@ -20,7 +20,8 @@ interface TagProps {
 }
 
 export function CalendarTags() {
-	const { handleSelectDays } = useContext(CalendarContext);
+	const { handleSelectDays, clearCheckinCheckout } =
+		useContext(CalendarContext);
 
 	const initialTags: TagProps[] = [
 		{
@@ -49,6 +50,7 @@ export function CalendarTags() {
 
 		handleSelectDays({ startDate, endDate });
 		setTags(newTags);
+		clearCheckinCheckout();
 	}
 
 	return (
