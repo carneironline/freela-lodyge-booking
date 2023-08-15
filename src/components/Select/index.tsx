@@ -16,6 +16,8 @@ export function Select({
 	const [showOptions, setShowOptions] = useState(false);
 	const [stateValue, setStateValue] = useState(value);
 	const classList = classNames({ "is-open": !!showOptions });
+	const listId = `${id}Select`;
+
 	function handleOpenOptions() {
 		setShowOptions(true);
 	}
@@ -26,12 +28,34 @@ export function Select({
 		setShowOptions(false);
 	}
 
+	function setListPosition() {
+		const list = document.getElementById(listId);
+
+		if (!isInViewport(list)) list?.classList.add(`${styles.isBottom}`);
+	}
+
+	function isInViewport(element: HTMLElement | null) {
+		const viewportHeight = window.innerHeight;
+		const rect = element?.getBoundingClientRect() || { top: 0 };
+		const position = element ? rect?.top + element?.clientHeight : 0;
+
+		if (position < viewportHeight) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	useEffect(() => {
+		setListPosition();
+	}, []);
+
 	useEffect(() => {
 		setStateValue(value);
 	}, [value]);
 
 	return (
-		<div className={`${styles.container} ${classList}`}>
+		<div className={`${styles.container} ${classList} `}>
 			<Input
 				id={id}
 				icon={Icon}
@@ -40,7 +64,7 @@ export function Select({
 				onFocus={handleOpenOptions}
 			/>
 
-			<div className={styles.list}>
+			<div id={listId} className={`${styles.list} `}>
 				{options.map((item) => (
 					<div
 						className={styles.item}
