@@ -10,8 +10,8 @@ import { isSM } from "@/utils/breakpoint";
 import styles from "./ModalCalendar.module.scss";
 
 export function ModalCalendar() {
-	const { isModalOpen, handleCloseModal } = useContext(CalendarContext);
-	const [showSchedule, setShowSchedule] = useState(false);
+	const { isModalOpen, handleCloseModal, showSchedule, setShowSchedule } =
+		useContext(CalendarContext);
 	const classShowSchedule = showSchedule ? "show-schedule" : "";
 
 	function BtnClose() {

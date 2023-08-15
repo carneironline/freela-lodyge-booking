@@ -18,7 +18,9 @@ interface CalendarContextType {
 	checkin: string;
 	checkout: string;
 	hasCompleteBookingInfo: boolean;
+	showSchedule: boolean;
 	setIsModalOpen: (isLoading: boolean) => void;
+	setShowSchedule: (isShow: boolean) => void;
 	handleSelectDays: (days: SelectedProps) => void;
 	handleCloseModal: () => void;
 	handleOpenModal: () => void;
@@ -40,6 +42,8 @@ export const CalendarContext = createContext<CalendarContextType>({
 	checkin: "",
 	checkout: "",
 	hasCompleteBookingInfo: false,
+	showSchedule: false,
+	setShowSchedule: () => {},
 	setIsModalOpen: () => {},
 	handleSelectDays: () => {},
 	handleCloseModal: () => {},
@@ -64,6 +68,7 @@ function evtToogleBodyOverflowHidden(isActive = false) {
 
 export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [showSchedule, setShowSchedule] = useState(false);
 	const [selectedDates, setSelectedDates] =
 		useState<SelectedDatesProps>(initialDates);
 	const [checkin, setCheckin] = useState(calendarStorage().checkin || "");
@@ -78,6 +83,8 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 	const contextValue = {
 		isModalOpen,
 		setIsModalOpen,
+		showSchedule,
+		setShowSchedule,
 		selectedDates,
 		handleSelectDays,
 		handleCloseModal,
@@ -148,6 +155,7 @@ export const CalendarProvider = ({ children }: CalendarProviderProps) => {
 		if (hasCompleteBookingInfo) {
 			setCalendarStorage({ ...calendarStorage(), checkin, checkout });
 			handleCloseModal();
+			setShowSchedule(false);
 		}
 	}
 
