@@ -476,7 +476,8 @@
 }
 
 .rdrDayPassive .rdrDayNumber span {
-	color: #d5dce0;
+	color: rgba(0, 0, 0, 0.1);
+	font-weight: normal;
 }
 
 .rdrDayPassive .rdrInRange,
